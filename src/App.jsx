@@ -4,7 +4,7 @@ import './App.css'
 const projects = [
   {
     title: "incident.io",
-    description: "Description of project one goes here",
+    description: "Hi, I'm Tom Petty, a Product Design Leader with 15 years experience designing startups. I'm Staff Designer at Incident — a platform for modern incident management.",
     media: [
       {
         type: 'image',
@@ -60,7 +60,7 @@ const projects = [
   },
   {
     title: "Cord",
-    description: "Description of project two goes here",
+    description: "Hi, I'm Tom Petty, a Product Design Leader with 15 years experience designing startups. I'm Staff Designer at Incident — a platform for modern incident management.",
     media: [
       {
         type: 'image',

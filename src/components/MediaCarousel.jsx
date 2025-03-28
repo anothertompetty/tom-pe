@@ -7,6 +7,23 @@ import './MediaCarousel.css'
 export function MediaCarousel({ items }) {
   const sliderRef = useRef(null)
   const [itemWidths, setItemWidths] = useState({})
+  const [mediaHeight, setMediaHeight] = useState(500)
+
+  useEffect(() => {
+    // Function to update media height based on window width
+    const updateMediaHeight = () => {
+      setMediaHeight(window.innerWidth <= 1024 ? 360 : 500)
+    }
+
+    // Initial height
+    updateMediaHeight()
+
+    // Listen for window resize
+    window.addEventListener('resize', updateMediaHeight)
+
+    // Cleanup
+    return () => window.removeEventListener('resize', updateMediaHeight)
+  }, [])
 
   useEffect(() => {
     // Function to get natural width of media
@@ -15,9 +32,9 @@ export function MediaCarousel({ items }) {
         if (type === 'image') {
           const img = new Image()
           img.onload = () => {
-            // Calculate width maintaining aspect ratio with 500px height
+            // Calculate width maintaining aspect ratio with current height
             const aspectRatio = img.naturalWidth / img.naturalHeight
-            const width = Math.round(500 * aspectRatio)
+            const width = Math.round(mediaHeight * aspectRatio)
             resolve(width)
           }
           img.src = src
@@ -25,9 +42,9 @@ export function MediaCarousel({ items }) {
           // For videos, load metadata to get dimensions
           const video = document.createElement('video')
           video.onloadedmetadata = () => {
-            // Calculate width maintaining aspect ratio with 500px height
+            // Calculate width maintaining aspect ratio with current height
             const aspectRatio = video.videoWidth / video.videoHeight
-            const width = Math.round(500 * aspectRatio)
+            const width = Math.round(mediaHeight * aspectRatio)
             resolve(width)
           }
           video.src = src
@@ -47,7 +64,7 @@ export function MediaCarousel({ items }) {
     }
 
     loadWidths()
-  }, [items])
+  }, [items, mediaHeight])
 
   const handleSlideClick = (index) => {
     if (sliderRef.current) {
@@ -81,7 +98,10 @@ export function MediaCarousel({ items }) {
           <div 
             key={index} 
             className="carousel-item"
-            style={{ width: itemWidths[index] || 800 }}
+            style={{ 
+              width: itemWidths[index] || 800,
+              transition: 'width 0.3s ease-in-out'
+            }}
             onClick={() => handleSlideClick(index)}
           >
             {item.type === 'image' ? (
@@ -90,8 +110,9 @@ export function MediaCarousel({ items }) {
                 alt={item.alt} 
                 loading="lazy"
                 width={itemWidths[index] || 800}
-                height={500}
+                height={mediaHeight}
                 draggable="false"
+                style={{ transition: 'width 0.3s ease-in-out, height 0.3s ease-in-out' }}
               />
             ) : (
               <video
@@ -101,7 +122,8 @@ export function MediaCarousel({ items }) {
                 playsInline
                 loading="lazy"
                 width={itemWidths[index] || 800}
-                height={500}
+                height={mediaHeight}
+                style={{ transition: 'width 0.3s ease-in-out, height 0.3s ease-in-out' }}
               >
                 <source src={item.src} type="video/mp4" />
               </video>
