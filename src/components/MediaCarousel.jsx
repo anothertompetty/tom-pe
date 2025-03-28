@@ -7,22 +7,20 @@ export function MediaCarousel({ items }) {
   const settings = {
     dots: false,
     infinite: true,
-    speed: 9000,
+    speed: 500,
     variableWidth: true,
     autoplay: true,
-    autoplaySpeed: 0,
+    autoplaySpeed: 3000,
     cssEase: "linear",
-    pauseOnHover: true,
-    pauseOnFocus: true,
     arrows: false,
     slidesToShow: 1,
     slidesToScroll: 1,
     draggable: true,
     swipe: true,
     swipeToSlide: true,
-    touchThreshold: 1,
-    useCSS: true,
-    useTransform: true,
+    touchThreshold: 5,
+    pauseOnHover: true,
+    pauseOnFocus: true,
   }
 
   return (
@@ -32,7 +30,7 @@ export function MediaCarousel({ items }) {
           <div 
             key={index} 
             className="carousel-item"
-            style={{ width: item.width, cursor: 'grab' }}
+            style={{ width: item.width }}
           >
             {item.type === 'image' ? (
               <img 

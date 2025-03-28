@@ -7,11 +7,6 @@
 .carousel-item {
   height: 400px;
   padding-right: 16px;
-  cursor: grab;
-}
-
-.carousel-item:active {
-  cursor: grabbing;
 }
 
 .carousel-item img,
@@ -21,7 +16,6 @@
   object-fit: cover;
   pointer-events: none;
   user-select: none;
-  -webkit-user-drag: none;
 }
 
 /* Override default slick styles */
