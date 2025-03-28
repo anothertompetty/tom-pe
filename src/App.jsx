@@ -1,37 +1,61 @@
 import { MediaCarousel } from './components/MediaCarousel'
 import './App.css'
 
-// Sample project data
 const projects = [
   {
-    title: "incident.io On-call",
+    title: "incident.io",
     description: "Description of project one goes here",
     media: [
       {
         type: 'image',
-        src: '/src/assets/images/on-call/mobile-hand.png',
+        src: '/src/assets/images/incident/mobile-hand.png',
         alt: 'Project 1 Image 1'
       },
       {
         type: 'video',
-        src: '/src/assets/videos/on-call/shift-cards.mov',
+        src: '/src/assets/videos/incident/shift-cards.mov',
         alt: 'Project 1 Image 2'
       },
       {
         type: 'image',
-        src: '/src/assets/images/on-call/mobile-escalation.png',
+        src: '/src/assets/images/incident/incident-dashboard-home.png',
+        alt: 'Project 1 Image 1'
+      },
+      {
+        type: 'image',
+        src: '/src/assets/images/incident/incident-dashboard-illustrations.png',
+        alt: 'Project 1 Image 1'
+      },
+      {
+        type: 'image',
+        src: '/src/assets/images/incident/mobile-escalation.png',
+        alt: 'Project 1 Image 1'
+      },
+      {
+        type: 'image',
+        src: '/src/assets/images/incident/incident-socks.png',
+        alt: 'Project 1 Image 1'
+      },
+      {
+        type: 'image',
+        src: '/src/assets/images/incident/mobile-cover-request.png',
         alt: 'Project 1 Image 1'
       },
       {
         type: 'video',
-        src: '/src/assets/videos/on-call/cover-request.mov',
+        src: '/src/assets/videos/incident/cover-request.mov',
         alt: 'Project 1 Image 2'
       },
       {
         type: 'image',
-        src: '/src/assets/images/on-call/mobile-cover-request.png',
+        src: '/src/assets/images/incident/incident-dashboard-wizard.png',
         alt: 'Project 1 Image 1'
-      }
+      },
+      {
+        type: 'image',
+        src: '/src/assets/images/incident/incident-tote.png',
+        alt: 'Project 1 Image 1'
+      },
     ]
   },
   {
@@ -101,8 +125,8 @@ function App() {
   return (
     <div className="app">
       <h1>Hi, I'm Tom Petty, a Product Design Leader with 15 years experience designing startups. 
-I'm Staff Designer at Incident — a platform for modern incident management. I was Founding Designer at Cord, helped design Google Play Console, led the design teams at GoCardless and Lyst, and ran Design Club. In a past life I did branding at Wolff Olins. 
-Email or LinkedIn me, or view some recent projects:</h1>
+I'm Staff Designer at Incident — a platform for modern incident management. I was Founding Designer at Cord, helped design Google Play Console, led the teams at GoCardless and Lyst, and ran Design Club. In a past life I did branding at Wolff Olins. 
+Email or LinkedIn me, or view some recent projects.</h1>
       {projects.map((project, index) => (
         <div key={index} className="project">
           <h2>{project.title}</h2>
@@ -110,6 +134,8 @@ Email or LinkedIn me, or view some recent projects:</h1>
           <MediaCarousel items={project.media} />
         </div>
       ))}
+      <p><strong>&copy; 2025 Tom Petty</strong><br/>
+      Email | LinkedIn</p>
     </div>
   )
 }

@@ -27,6 +27,8 @@ h1, h2, h3, p {
   font-size: 20px;
   font-weight: 400;
   line-height: 27px;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 h1 {
