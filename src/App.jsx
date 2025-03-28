@@ -4,75 +4,95 @@ import './App.css'
 // Sample project data
 const projects = [
   {
-    title: "Project One",
+    title: "incident.io On-call",
     description: "Description of project one goes here",
     media: [
       {
         type: 'image',
-        src: 'https://picsum.photos/800/400?random=1',
-        alt: 'Project 1 Image 1',
-        width: 800
+        src: '/src/assets/images/on-call/mobile-hand.png',
+        alt: 'Project 1 Image 1'
+      },
+      {
+        type: 'video',
+        src: '/src/assets/videos/on-call/shift-cards.mov',
+        alt: 'Project 1 Image 2'
       },
       {
         type: 'image',
-        src: 'https://picsum.photos/600/400?random=2',
-        alt: 'Project 1 Image 2',
-        width: 600
+        src: '/src/assets/images/on-call/mobile-escalation.png',
+        alt: 'Project 1 Image 1'
+      },
+      {
+        type: 'video',
+        src: '/src/assets/videos/on-call/cover-request.mov',
+        alt: 'Project 1 Image 2'
       },
       {
         type: 'image',
-        src: 'https://picsum.photos/900/400?random=3',
-        alt: 'Project 1 Image 3',
-        width: 900
-      },
-      {
-        type: 'image',
-        src: 'https://picsum.photos/700/400?random=4',
-        alt: 'Project 1 Image 4',
-        width: 700
-      },
-      {
-        type: 'image',
-        src: 'https://picsum.photos/1200/400?random=5',
-        alt: 'Project 1 Image 5',
-        width: 1200
+        src: '/src/assets/images/on-call/mobile-cover-request.png',
+        alt: 'Project 1 Image 1'
       }
     ]
   },
   {
-    title: "Project Two",
+    title: "Cord",
     description: "Description of project two goes here",
     media: [
       {
         type: 'image',
-        src: 'https://picsum.photos/500/400?random=6',
-        alt: 'Project 2 Image 1',
-        width: 500
+        src: '/src/assets/images/cord/cord-billboard.png',
+        alt: 'Project 2 Image 1'
+      },
+      {
+        type: 'video',
+        src: '/src/assets/videos/cord/cord-homepage.mov',
+        alt: 'Project 2 Image 2'
       },
       {
         type: 'image',
-        src: 'https://picsum.photos/700/400?random=7',
-        alt: 'Project 2 Image 2',
-        width: 700
+        src: '/src/assets/images/cord/cord-tote.png',
+        alt: 'Project 2 Image 4'
       },
       {
         type: 'image',
-        src: 'https://picsum.photos/400/400?random=8',
-        alt: 'Project 2 Image 3',
-        width: 400
+        src: '/src/assets/images/cord/cord-features-page.png',
+        alt: 'Project 2 Image 4'
       },
       {
         type: 'image',
-        src: 'https://picsum.photos/600/400?random=9',
-        alt: 'Project 2 Image 4',
-        width: 600
+        src: '/src/assets/images/cord/cord-components-overview.png',
+        alt: 'Project 2 Image 3'
       },
       {
         type: 'image',
-        src: 'https://picsum.photos/800/400?random=10',
-        alt: 'Project 2 Image 5',
-        width: 800
-      }
+        src: '/src/assets/images/cord/cord-logo-neon.png',
+        alt: 'Project 2 Image 4'
+      },
+      {
+        type: 'image',
+        src: '/src/assets/images/cord/cord-docs-page.png',
+        alt: 'Project 2 Image 4'
+      },
+      {
+        type: 'image',
+        src: '/src/assets/images/cord/cord-patent-1.png',
+        alt: 'Project 2 Image 5'
+      },
+      {
+        type: 'image',
+        src: '/src/assets/images/cord/cord-patent-2.png',
+        alt: 'Project 2 Image 5'
+      },
+      {
+        type: 'image',
+        src: '/src/assets/images/cord/cord-hoodie.png',
+        alt: 'Project 2 Image 4'
+      },
+      {
+        type: 'image',
+        src: '/src/assets/images/cord/cord-office.png',
+        alt: 'Project 2 Image 4'
+      },
     ]
   }
 ]
@@ -80,13 +100,14 @@ const projects = [
 function App() {
   return (
     <div className="app">
-      <h1>Tom Pe</h1>
-      <h2>Projects</h2>
+      <h1>Hi, I'm Tom Petty, a Product Design Leader with 15 years experience designing startups. 
+I'm Staff Designer at Incident — a platform for modern incident management. I was Founding Designer at Cord, helped design Google Play Console, led the design teams at GoCardless and Lyst, and ran Design Club. In a past life I did branding at Wolff Olins. 
+Email or LinkedIn me, or view some recent projects:</h1>
       {projects.map((project, index) => (
         <div key={index} className="project">
-          <h3>{project.title}</h3>
-          <MediaCarousel items={project.media} />
+          <h2>{project.title}</h2>
           <p>{project.description}</p>
+          <MediaCarousel items={project.media} />
         </div>
       ))}
     </div>
