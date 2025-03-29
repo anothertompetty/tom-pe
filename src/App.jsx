@@ -5,7 +5,6 @@ import React from 'react'
 const projects = [
   {
     title: "Product at incident.io",
-    tags: ["UX", "UI", "DESIGN SYSTEMS"],
     description: "Hi, I'm Tom Petty, a Product Design Leader with 15 years experience designing startups. I'm Staff Designer at Incident — a platform for modern incident management.",
     media: [
       {
@@ -62,7 +61,6 @@ const projects = [
   },
   {
     title: "Brand at incident.io",
-    tags: ["UX", "BRANDING"],
     description: "Hi, I'm Tom Petty, a Product Design Leader with 15 years experience designing startups. I'm Staff Designer at Incident — a platform for modern incident management.",
     media: [
       {
@@ -84,7 +82,6 @@ const projects = [
   },
   {
     title: "Cord",
-    tags: ["UX", "BRANDING"],
     description: "Hi, I'm Tom Petty, a Product Design Leader with 15 years experience designing startups. I'm Staff Designer at Incident — a platform for modern incident management.",
     media: [
       {
@@ -169,14 +166,7 @@ Email or LinkedIn me, or view some recent projects.</h1>
       <hr className="section-divider" />
       {projects.map((project, index) => (
         <div key={index} className="project">
-          <div className="project-header">
-            <h2>{project.title}</h2>
-            <div className="project-tags">
-              {project.tags.map((tag, tagIndex) => (
-                <span key={tagIndex} className="project-tag">{tag}</span>
-              ))}
-            </div>
-          </div>
+          <h2>{project.title}</h2>
           <p>{project.description}</p>
           <MediaCarousel items={project.media} />
           {index < projects.length - 1 && <hr className="section-divider" />}
