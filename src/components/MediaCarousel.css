@@ -9,7 +9,6 @@
 .carousel-item {
   height: 500px;
   padding-right: 9px;
-  cursor: pointer;
   transition: height 0.3s ease-in-out;
 }
 
@@ -27,6 +26,7 @@
 .slick-track {
   display: flex !important;
   margin-left: 0 !important;
+  cursor: grab;
 }
 
 .slick-slide {
@@ -41,6 +41,7 @@
 .slick-slider {
   touch-action: pan-y pinch-zoom;
   overflow: visible;
+  cursor: grab;
 }
 
 .slick-list {
@@ -48,7 +49,8 @@
   overflow: visible;
 }
 
-.slick-list:active {
+.slick-list:active,
+.slick-track:active {
   cursor: grabbing;
 }
 

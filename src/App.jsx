@@ -3,7 +3,8 @@ import './App.css'
 
 const projects = [
   {
-    title: "incident.io",
+    title: "Product at incident.io",
+    tags: ["UX", "UI", "DESIGN SYSTEMS"],
     description: "Hi, I'm Tom Petty, a Product Design Leader with 15 years experience designing startups. I'm Staff Designer at Incident — a platform for modern incident management.",
     media: [
       {
@@ -59,7 +60,30 @@ const projects = [
     ]
   },
   {
+    title: "Brand at incident.io",
+    tags: ["UX", "BRANDING"],
+    description: "Hi, I'm Tom Petty, a Product Design Leader with 15 years experience designing startups. I'm Staff Designer at Incident — a platform for modern incident management.",
+    media: [
+      {
+        type: 'image',
+        src: '/src/assets/images/incident/mobile-hand.png',
+        alt: 'Project 1 Image 1'
+      },
+      {
+        type: 'image',
+        src: '/src/assets/images/incident/incident-dashboard-wizard.png',
+        alt: 'Project 1 Image 1'
+      },
+      {
+        type: 'image',
+        src: '/src/assets/images/incident/incident-tote.png',
+        alt: 'Project 1 Image 1'
+      },
+    ]
+  },
+  {
     title: "Cord",
+    tags: ["UX", "BRANDING"],
     description: "Hi, I'm Tom Petty, a Product Design Leader with 15 years experience designing startups. I'm Staff Designer at Incident — a platform for modern incident management.",
     media: [
       {
@@ -124,14 +148,23 @@ const projects = [
 function App() {
   return (
     <div className="app">
-      <h1>Hi, I'm Tom Petty, a Product Design Leader with 15 years experience designing startups. 
+      <h1>Hi, I'm Tom Petty, a Design Leader with 15 years experience building startups. 
 I'm Staff Designer at Incident — a platform for modern incident management. I was Founding Designer at Cord, helped design Google Play Console, led the teams at GoCardless and Lyst, and ran Design Club. In a past life I did branding at Wolff Olins. 
 Email or LinkedIn me, or view some recent projects.</h1>
+      <hr className="section-divider" />
       {projects.map((project, index) => (
         <div key={index} className="project">
-          <h2>{project.title}</h2>
+          <div className="project-header">
+            <h2>{project.title}</h2>
+            <div className="project-tags">
+              {project.tags.map((tag, tagIndex) => (
+                <span key={tagIndex} className="project-tag">{tag}</span>
+              ))}
+            </div>
+          </div>
           <p>{project.description}</p>
           <MediaCarousel items={project.media} />
+          {index < projects.length - 1 && <hr className="section-divider" />}
         </div>
       ))}
       <p><strong>&copy; 2025 Tom Petty</strong><br/>
