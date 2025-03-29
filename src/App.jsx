@@ -1,5 +1,6 @@
 import { MediaCarousel } from './components/MediaCarousel'
 import './App.css'
+import React from 'react'
 
 const projects = [
   {
@@ -146,6 +147,20 @@ const projects = [
 ]
 
 function App() {
+  const [theme, setTheme] = React.useState(() => {
+    return localStorage.getItem('theme') || 'light'
+  })
+
+  // Update document theme when state changes
+  React.useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme)
+    localStorage.setItem('theme', theme)
+  }, [theme])
+
+  const toggleTheme = () => {
+    setTheme(prevTheme => prevTheme === 'dark' ? 'light' : 'dark')
+  }
+
   return (
     <div className="app">
       <h1>Hi, I'm Tom Petty, a Design Leader with 15 years experience building startups. 
@@ -167,8 +182,26 @@ Email or LinkedIn me, or view some recent projects.</h1>
           {index < projects.length - 1 && <hr className="section-divider" />}
         </div>
       ))}
-      <p><strong>&copy; 2025 Tom Petty</strong><br/>
-      Email | LinkedIn</p>
+      <div className="footer">
+        <div className="footer-text">
+          <p><strong>&copy; 2025 Tom Petty</strong></p>
+          <div className="social-links">
+            <a href="hello@anothertompetty.com">Email</a>
+            <a href="https://linkedin.com/in/tompetty" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </div>
+        </div>
+        <button 
+          className="theme-toggle" 
+          onClick={toggleTheme}
+          aria-label="Toggle theme"
+        >
+          {theme === 'light' ? (
+            <img src="/src/assets/images/icons/moon.svg" alt="Dark mode" width="16" height="16" />
+          ) : (
+            <img src="/src/assets/images/icons/sunglasses.svg" alt="Light mode" width="16" height="16" />
+          )}
+        </button>
+      </div>
     </div>
   )
 }
