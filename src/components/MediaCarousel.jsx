@@ -8,6 +8,7 @@ export function MediaCarousel({ items }) {
   const sliderRef = useRef(null)
   const [itemWidths, setItemWidths] = useState({})
   const [mediaHeight, setMediaHeight] = useState(500)
+  const [isMobile, setIsMobile] = useState(false)
 
   useEffect(() => {
     // Function to update media height based on window width
@@ -66,6 +67,16 @@ export function MediaCarousel({ items }) {
     loadWidths()
   }, [items, mediaHeight])
 
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768)
+    }
+    
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
+
   const handleSlideClick = (index) => {
     if (sliderRef.current) {
       sliderRef.current.slickGoTo(index)
@@ -89,6 +100,35 @@ export function MediaCarousel({ items }) {
     touchThreshold: 5,
     pauseOnHover: true,
     pauseOnFocus: true,
+  }
+
+  if (isMobile) {
+    return (
+      <div className="media-stack">
+        {items.map((item, index) => (
+          <div key={index} className="stack-item">
+            {item.type === 'image' ? (
+              <img 
+                src={item.src} 
+                alt={item.alt} 
+                loading="lazy"
+                draggable="false"
+              />
+            ) : (
+              <video
+                autoPlay
+                muted
+                loop
+                playsInline
+                loading="lazy"
+              >
+                <source src={item.src} type="video/mp4" />
+              </video>
+            )}
+          </div>
+        ))}
+      </div>
+    )
   }
 
   return (
