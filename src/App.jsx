@@ -34,11 +34,6 @@ const projects = [
       },
       {
         type: 'image',
-        src: '/src/assets/images/incident/incident-socks.png',
-        alt: 'Project 1 Image 1'
-      },
-      {
-        type: 'image',
         src: '/src/assets/images/incident/mobile-cover-request.png',
         alt: 'Project 1 Image 1'
       },
@@ -65,17 +60,32 @@ const projects = [
     media: [
       {
         type: 'image',
-        src: '/src/assets/images/incident/mobile-hand.png',
+        src: '/src/assets/images/incident-brand/site-home.png',
         alt: 'Project 1 Image 1'
       },
       {
         type: 'image',
-        src: '/src/assets/images/incident/incident-dashboard-wizard.png',
+        src: '/src/assets/images/incident/incident-socks.png',
         alt: 'Project 1 Image 1'
       },
       {
         type: 'image',
-        src: '/src/assets/images/incident/incident-tote.png',
+        src: '/src/assets/images/incident-brand/dont-panic-t-shirt.jpg',
+        alt: 'Project 1 Image 1'
+      },
+      {
+        type: 'image',
+        src: '/src/assets/images/incident-brand/tote.jpg',
+        alt: 'Project 1 Image 1'
+      },
+      {
+        type: 'video',
+        src: '/src/assets/videos/incident-brand/sev0-opening.mp4',
+        alt: 'Project 1 Image 1'
+      },
+      {
+        type: 'image',
+        src: '/src/assets/images/incident-brand/sev0-background.jpg',
         alt: 'Project 1 Image 1'
       },
     ]
