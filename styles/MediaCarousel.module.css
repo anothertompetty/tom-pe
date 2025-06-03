@@ -1,8 +1,0 @@
-.slide {
-  cursor: grab;
-  user-select: none;
-}
-
-.slide:active {
-  cursor: grabbing;
-} 
