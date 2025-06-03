@@ -17,6 +17,8 @@
   --space-md: 16px;
   --space-lg: 24px;
   --space-xl: 120px;
+  --space-column: 32px;
+  --space-divider: 64px;
   
   /* Typography Scale */
   --text-xs: 12px;
@@ -143,12 +145,12 @@ p {
   height: 1px;
   background-color: var(--color-divider);
   border: none;
-  margin: var(--space-xl) 0;
+  margin: var(--space-divider) 0;
 }
 
 @media (max-width: 1024px) {
   .section-divider {
-    margin: calc(var(--space-lg) * 3) 0;
+    margin: var(--space-divider) 0;
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;

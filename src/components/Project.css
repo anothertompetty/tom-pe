@@ -1,6 +1,5 @@
 /* Project Container */
 .project {
-  margin-bottom: var(--space-xl);
   position: relative;
 }
 
@@ -8,7 +7,7 @@
 .project-content {
   display: grid;
   grid-template-columns: 368px 1fr;
-  gap: var(--space-lg);
+  gap: var(--space-column);
   margin-bottom: var(--space-lg);
 }
 
@@ -52,7 +51,7 @@
 
 /* Sub-projects */
 .sub-project {
-  margin-top: calc(var(--space-lg) * 2);
+  margin-top: var(--space-divider);
 }
 
 .sub-project .project-text {
