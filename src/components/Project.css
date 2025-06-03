@@ -1,5 +1,6 @@
 .project {
   margin-bottom: var(--space-xl);
+  position: relative;
 }
 
 .project-content {
@@ -11,6 +12,10 @@
 
 .project-text {
   max-width: 368px;
+  position: sticky;
+  top: var(--space-md);
+  height: fit-content;
+  align-self: start;
 }
 
 .project-text h2 {
@@ -42,7 +47,11 @@
 }
 
 .sub-project {
-  margin-top: var(--space-xl);
+  margin-top: calc(var(--space-lg) * 2);
+}
+
+.sub-project .project-text {
+  top: var(--space-md);
 }
 
 @media (max-width: 1024px) {
@@ -56,6 +65,16 @@
 
   .project-text {
     max-width: none;
+    position: relative;
+    top: 0;
+  }
+
+  .sub-project {
+    margin-top: var(--space-lg);
+  }
+
+  .sub-project .project-text {
+    top: 0;
   }
 
   .project-media {
