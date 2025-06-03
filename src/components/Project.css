@@ -1,8 +1,10 @@
+/* Project Container */
 .project {
   margin-bottom: var(--space-xl);
   position: relative;
 }
 
+/* Project Content Layout */
 .project-content {
   display: grid;
   grid-template-columns: 368px 1fr;
@@ -10,6 +12,7 @@
   margin-bottom: var(--space-lg);
 }
 
+/* Text Column */
 .project-text {
   max-width: 368px;
   position: sticky;
@@ -26,6 +29,7 @@
   margin-bottom: 0;
 }
 
+/* Media Column */
 .project-media {
   display: flex;
   flex-direction: column;
@@ -46,6 +50,7 @@
   object-fit: cover;
 }
 
+/* Sub-projects */
 .sub-project {
   margin-top: calc(var(--space-lg) * 2);
 }
@@ -54,7 +59,9 @@
   top: var(--space-md);
 }
 
+/* Mobile Layout */
 @media (max-width: 1024px) {
+  /* Stack columns and center content */
   .project-content {
     grid-template-columns: 1fr;
     gap: var(--space-md);
@@ -63,12 +70,14 @@
     margin-right: auto;
   }
 
+  /* Disable sticky positioning */
   .project-text {
     max-width: none;
     position: relative;
     top: 0;
   }
 
+  /* Reset sub-project spacing */
   .sub-project {
     margin-top: var(--space-lg);
   }
@@ -77,6 +86,7 @@
     top: 0;
   }
 
+  /* Adjust media spacing */
   .project-media {
     gap: var(--space-md);
   }
