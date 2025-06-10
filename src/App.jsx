@@ -1,154 +1,170 @@
-import { MediaCarousel } from './components/MediaCarousel'
+import { Project } from './components/Project'
 import './App.css'
 import React from 'react'
 
 const projects = [
   {
     title: "Product at incident.io",
-    description: "Hi, I'm Tom Petty, a Product Design Leader with 15 years experience designing startups. I'm Staff Designer at Incident — a platform for modern incident management.",
+    description: "Leading product design for incident.io, a platform for modern incident management. Focused on creating intuitive interfaces for complex workflows.",
     media: [
       {
         type: 'image',
         src: '/src/assets/images/incident/mobile-hand.png',
-        alt: 'Project 1 Image 1'
+        alt: 'Mobile interface for incident management'
+      }
+    ],
+    subProjects: [
+      {
+        description: "Redesigned the shift management system to make it easier for teams to coordinate on-call schedules. Created an intuitive interface for managing rotations and handling escalations.",
+        media: [
+          {
+            type: 'video',
+            src: '/src/assets/videos/incident/shift-cards.mov',
+            alt: 'Shift management interface'
+          },
+          {
+            type: 'image',
+            src: '/src/assets/images/incident/incident-dashboard-home.png',
+            alt: 'Dashboard overview'
+          }
+        ]
       },
       {
-        type: 'video',
-        src: '/src/assets/videos/incident/shift-cards.mov',
-        alt: 'Project 1 Image 2'
-      },
-      {
-        type: 'image',
-        src: '/src/assets/images/incident/incident-dashboard-home.png',
-        alt: 'Project 1 Image 1'
-      },
-      {
-        type: 'image',
-        src: '/src/assets/images/incident/incident-dashboard-illustrations.png',
-        alt: 'Project 1 Image 1'
-      },
-      {
-        type: 'image',
-        src: '/src/assets/images/incident/mobile-escalation.png',
-        alt: 'Project 1 Image 1'
-      },
-      {
-        type: 'image',
-        src: '/src/assets/images/incident/mobile-cover-request.png',
-        alt: 'Project 1 Image 1'
-      },
-      {
-        type: 'video',
-        src: '/src/assets/videos/incident/cover-request.mov',
-        alt: 'Project 1 Image 2'
-      },
-      {
-        type: 'image',
-        src: '/src/assets/images/incident/incident-dashboard-wizard.png',
-        alt: 'Project 1 Image 1'
-      },
-      {
-        type: 'image',
-        src: '/src/assets/images/incident/incident-tote.png',
-        alt: 'Project 1 Image 1'
-      },
+        description: "Created a seamless mobile experience for on-call engineers to manage incidents on the go. Focused on quick actions and clear status updates for critical situations.",
+        media: [
+          {
+            type: 'image',
+            src: '/src/assets/images/incident/mobile-escalation.png',
+            alt: 'Mobile escalation interface'
+          },
+          {
+            type: 'image',
+            src: '/src/assets/images/incident/mobile-cover-request.png',
+            alt: 'Cover request interface'
+          }
+        ]
+      }
     ]
   },
   {
     title: "Brand at incident.io",
-    description: "Hi, I'm Tom Petty, a Product Design Leader with 15 years experience designing startups. I'm Staff Designer at Incident — a platform for modern incident management.",
+    description: "Developed and evolved the incident.io brand identity, creating a cohesive visual language across all touchpoints.",
     media: [
       {
         type: 'image',
         src: '/src/assets/images/incident-brand/site-home.png',
-        alt: 'Project 1 Image 1'
+        alt: 'incident.io homepage'
+      }
+    ],
+    subProjects: [
+      {
+        description: "Created a comprehensive set of brand assets including merchandise, illustrations, and marketing materials. Designed everything from t-shirts to office decor to create a cohesive brand experience.",
+        media: [
+          {
+            type: 'image',
+            src: '/src/assets/images/incident/incident-socks.png',
+            alt: 'Branded socks'
+          },
+          {
+            type: 'image',
+            src: '/src/assets/images/incident-brand/dont-panic-t-shirt.jpg',
+            alt: 'Branded t-shirt'
+          }
+        ]
       },
       {
-        type: 'image',
-        src: '/src/assets/images/incident/incident-socks.png',
-        alt: 'Project 1 Image 1'
-      },
-      {
-        type: 'image',
-        src: '/src/assets/images/incident-brand/dont-panic-t-shirt.jpg',
-        alt: 'Project 1 Image 1'
-      },
-      {
-        type: 'image',
-        src: '/src/assets/images/incident-brand/tote.jpg',
-        alt: 'Project 1 Image 1'
-      },
-      {
-        type: 'video',
-        src: '/src/assets/videos/incident-brand/sev0-opening.mp4',
-        alt: 'Project 1 Image 1'
-      },
-      {
-        type: 'image',
-        src: '/src/assets/images/incident-brand/sev0-background.jpg',
-        alt: 'Project 1 Image 1'
-      },
+        description: "Designed and executed brand presence for major industry events and conferences. Created immersive experiences that brought the incident.io brand to life in physical spaces.",
+        media: [
+          {
+            type: 'video',
+            src: '/src/assets/videos/incident-brand/sev0-opening.mp4',
+            alt: 'Event opening sequence'
+          },
+          {
+            type: 'image',
+            src: '/src/assets/images/incident-brand/sev0-background.jpg',
+            alt: 'Event backdrop'
+          }
+        ]
+      }
     ]
   },
   {
     title: "Cord",
-    description: "Hi, I'm Tom Petty, a Product Design Leader with 15 years experience designing startups. I'm Staff Designer at Incident — a platform for modern incident management.",
+    description: "Founded and led design at Cord, a developer collaboration platform. Created a comprehensive design system and brand identity that scaled with the company's growth.",
     media: [
       {
         type: 'image',
         src: '/src/assets/images/cord/cord-billboard.png',
-        alt: 'Project 2 Image 1'
+        alt: 'Cord billboard in San Francisco'
+      }
+    ],
+    subProjects: [
+      {
+        description: "Designed the core product experience, focusing on developer workflows and collaboration features. Created a comprehensive design system that made it easy to build and maintain complex interfaces.",
+        media: [
+          {
+            type: 'video',
+            src: '/src/assets/videos/cord/cord-homepage.mov',
+            alt: 'Cord homepage walkthrough'
+          },
+          {
+            type: 'image',
+            src: '/src/assets/images/cord/cord-features-page.png',
+            alt: 'Features overview page'
+          },
+          {
+            type: 'image',
+            src: '/src/assets/images/cord/cord-components-overview.png',
+            alt: 'Design system components'
+          },
+          {
+            type: 'image',
+            src: '/src/assets/images/cord/cord-docs-page.png',
+            alt: 'Documentation page'
+          }
+        ]
       },
       {
-        type: 'video',
-        src: '/src/assets/videos/cord/cord-homepage.mov',
-        alt: 'Project 2 Image 2'
+        description: "Developed Cord's brand identity and marketing materials, from digital assets to physical merchandise. Created a distinctive visual language that resonated with developers.",
+        media: [
+          {
+            type: 'image',
+            src: '/src/assets/images/cord/cord-logo-neon.png',
+            alt: 'Cord neon logo'
+          },
+          {
+            type: 'image',
+            src: '/src/assets/images/cord/cord-tote.png',
+            alt: 'Cord branded tote bag'
+          },
+          {
+            type: 'image',
+            src: '/src/assets/images/cord/cord-hoodie.png',
+            alt: 'Cord branded hoodie'
+          }
+        ]
       },
       {
-        type: 'image',
-        src: '/src/assets/images/cord/cord-tote.png',
-        alt: 'Project 2 Image 4'
-      },
-      {
-        type: 'image',
-        src: '/src/assets/images/cord/cord-features-page.png',
-        alt: 'Project 2 Image 4'
-      },
-      {
-        type: 'image',
-        src: '/src/assets/images/cord/cord-components-overview.png',
-        alt: 'Project 2 Image 3'
-      },
-      {
-        type: 'image',
-        src: '/src/assets/images/cord/cord-logo-neon.png',
-        alt: 'Project 2 Image 4'
-      },
-      {
-        type: 'image',
-        src: '/src/assets/images/cord/cord-docs-page.png',
-        alt: 'Project 2 Image 4'
-      },
-      {
-        type: 'image',
-        src: '/src/assets/images/cord/cord-patent-1.png',
-        alt: 'Project 2 Image 5'
-      },
-      {
-        type: 'image',
-        src: '/src/assets/images/cord/cord-patent-2.png',
-        alt: 'Project 2 Image 5'
-      },
-      {
-        type: 'image',
-        src: '/src/assets/images/cord/cord-hoodie.png',
-        alt: 'Project 2 Image 4'
-      },
-      {
-        type: 'image',
-        src: '/src/assets/images/cord/cord-office.png',
-        alt: 'Project 2 Image 4'
-      },
+        description: "Designed Cord's office space and company culture, creating an environment that fostered creativity and collaboration. Developed a physical space that reflected our brand values.",
+        media: [
+          {
+            type: 'image',
+            src: '/src/assets/images/cord/cord-office.png',
+            alt: 'Cord office space'
+          },
+          {
+            type: 'image',
+            src: '/src/assets/images/cord/cord-patent-1.png',
+            alt: 'Cord patent documentation'
+          },
+          {
+            type: 'image',
+            src: '/src/assets/images/cord/cord-patent-2.png',
+            alt: 'Cord patent documentation'
+          }
+        ]
+      }
     ]
   }
 ]
@@ -170,17 +186,22 @@ function App() {
 
   return (
     <div className="app">
-      <h1>Hi, I'm Tom Petty, a Design Leader with 15 years experience building startups. 
-I'm Staff Designer at Incident — a platform for modern incident management. I was Founding Designer at Cord, helped design Google Play Console, led the teams at GoCardless and Lyst, and ran Design Club. In a past life I did branding at Wolff Olins. 
-Email or LinkedIn me, or view some recent projects.</h1>
+      <div className="project-content">
+        <div className="header-text"></div>
+        <div className="header-text">
+          <h1>I'm Tom, a Designer with 15 years experience building and leading startups. 
+Most recently I was Staff Designer at <a href="https://incident.io" target="_blank" rel="noopener">Incident.io</a>&thinsp;&mdash;&thinsp;a platform for modern incident management. 
+I was Founding Designer at <a href="https://techcrunch.com/2021/10/07/cord-gets-17-5m-to-get-more-devs-plugged-into-its-api-for-real-time-collaboration/" target="_blank" rel="noopener">Cord</a>, helped design <a href="https://android-developers.googleblog.com/2020/06/introducing-new-google-play-console-beta.html" target="_blank" rel="noopener">Google Play Console</a>, 
+led the teams at <a href="https://gocardless.com" target="_blank" rel="noopener">GoCardless</a> and <a href="https://lyst.com" target="_blank" rel="noopener">Lyst</a>, and ran Design Club. In a past life I did branding at <a href="https://wolffolins.com" target="_blank" rel="noopener">Wolff Olins</a>.<br/><br/>
+<a href="mailto:hello@anothertompetty.com">Email</a> or <a href="https://linkedin.com/in/tompetty" target="_blank" rel="noopener">LinkedIn</a> me, or view some recent projects:</h1>
+        </div>
+      </div>
       <hr className="section-divider" />
       {projects.map((project, index) => (
-        <div key={index} className="project">
-          <h2>{project.title}</h2>
-          <p>{project.description}</p>
-          <MediaCarousel items={project.media} />
+        <React.Fragment key={index}>
+          <Project project={project} />
           {index < projects.length - 1 && <hr className="section-divider" />}
-        </div>
+        </React.Fragment>
       ))}
       <div className="footer">
         <div className="footer-text">

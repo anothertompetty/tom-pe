@@ -8,7 +8,9 @@
   --color-divider: rgba(0, 0, 0, 0.08);
   
   /* Typography */
-  --font-family: 'Unica77 LL', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+  --font-family: 'Octave Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --font-family-medium: 'Octave Medium', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
     Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   
   /* Spacing */
@@ -17,6 +19,8 @@
   --space-md: 16px;
   --space-lg: 24px;
   --space-xl: 120px;
+  --space-column: 32px;
+  --space-divider: 64px;
   
   /* Typography Scale */
   --text-xs: 12px;
@@ -24,8 +28,8 @@
   --text-base: 20px;
   
   /* Line Heights */
-  --line-height-tight: 23px;
-  --line-height-base: 27px;
+  --line-height-tight: 22px;
+  --line-height-base: 28px;
   
   /* Opacity */
   --opacity-light: 0.04;
@@ -38,6 +42,25 @@
   --color-accent: #3b82f6;
   --color-tag-bg: rgba(255, 255, 255, 0.04);
   --color-divider: rgba(255, 255, 255, 0.08);
+}
+
+/* Font Declarations */
+@font-face {
+  font-family: 'Octave Regular';
+  src: url('/src/assets/fonts/Octave-Regular.woff2') format('woff2'),
+       url('/src/assets/fonts/Octave-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Octave Medium';
+  src: url('/src/assets/fonts/Octave-Medium.woff2') format('woff2'),
+       url('/src/assets/fonts/Octave-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
 }
 
 /* Base Styles */
@@ -83,16 +106,37 @@ body {
 h1, h2, h3, p {
   text-align: left;
   font-weight: 400;
+  font-family: var(--font-family);
+}
+
+h1, h2, h3, .social-links a {
+  font-family: var(--font-family-regular);
 }
 
 h1 {
   font-size: var(--text-base);
+  letter-spacing: -0.2px;
   line-height: var(--line-height-base);
-  max-width: 600px;
   margin: 0;
+  width: 100%;
+}
+
+@media (max-width: 1024px) {
+  h1 {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 h2 {
+  font-size: var(--text-sm);
+  line-height: var(--line-height-tight);
+  font-weight: 600;
+  max-width: 600px;
+  margin-bottom: 0;
+}
+
+h3 {
   font-size: var(--text-sm);
   line-height: var(--line-height-tight);
   font-weight: 600;
@@ -128,13 +172,16 @@ p {
   height: 1px;
   background-color: var(--color-divider);
   border: none;
-  margin: var(--space-xl) 0;
+  margin: var(--space-divider) 0;
 }
 
 @media (max-width: 1024px) {
-    .section-divider {
-        margin: calc(var(--space-lg) * 3) 0;
-    }
+  .section-divider {
+    margin: var(--space-divider) 0;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 /* Footer */
@@ -203,5 +250,87 @@ p {
   .footer {
     padding: none;
     padding-top: calc(var(--space-lg) * 3);
+  }
+}
+
+/* Text Column */
+.project-text,
+.header-text {
+  max-width: 368px;
+  position: sticky;
+  top: var(--space-md);
+  height: fit-content;
+  align-self: start;
+}
+
+.header-text {
+  max-width: none
+}
+
+.project-text h2 {
+  margin-bottom: var(--space-sm);
+}
+
+.project-text p {
+  margin-bottom: 0;
+}
+
+/* Links */
+a {
+  color: var(--color-text);
+  text-decoration: none;
+  font-family: var(--font-family-medium);
+  position: relative;
+  transition: color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 1.5px;
+  bottom: -1px;
+  left: 0;
+  background-color: var(--color-text);
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+@media (max-width: 1024px) {
+  /* Stack columns and center content */
+  .project-content {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Disable sticky positioning */
+  .project-text,
+  .header-text {
+    max-width: none;
+    position: relative;
+    top: 0;
+  }
+
+  /* Reset sub-project spacing */
+  .sub-project {
+    margin-top: var(--space-lg);
+  }
+
+  .sub-project .project-text {
+    top: 0;
+  }
+
+  /* Adjust media spacing */
+  .project-media {
+    gap: var(--space-md);
   }
 }
