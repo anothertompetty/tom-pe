@@ -186,9 +186,14 @@ function App() {
 
   return (
     <div className="app">
-      <h1>Hi, I'm Tom Petty, a Design Leader with 15 years experience building startups. 
+      <div className="project-content">
+        <div className="header-text"></div>
+        <div className="header-text">
+          <h1>Hi, I'm Tom Petty, a Design Leader with 15 years experience building startups. 
 I'm Staff Designer at Incident — a platform for modern incident management. I was Founding Designer at Cord, helped design Google Play Console, led the teams at GoCardless and Lyst, and ran Design Club. In a past life I did branding at Wolff Olins. 
 Email or LinkedIn me, or view some recent projects.</h1>
+        </div>
+      </div>
       <hr className="section-divider" />
       {projects.map((project, index) => (
         <React.Fragment key={index}>
