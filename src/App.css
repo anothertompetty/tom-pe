@@ -301,3 +301,36 @@ a:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
 }
+
+@media (max-width: 1024px) {
+  /* Stack columns and center content */
+  .project-content {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Disable sticky positioning */
+  .project-text,
+  .header-text {
+    max-width: none;
+    position: relative;
+    top: 0;
+  }
+
+  /* Reset sub-project spacing */
+  .sub-project {
+    margin-top: var(--space-lg);
+  }
+
+  .sub-project .project-text {
+    top: 0;
+  }
+
+  /* Adjust media spacing */
+  .project-media {
+    gap: var(--space-md);
+  }
+}
