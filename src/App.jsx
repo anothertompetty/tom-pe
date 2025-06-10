@@ -190,8 +190,10 @@ function App() {
         <div className="header-text"></div>
         <div className="header-text">
           <h1>Hi, I'm Tom Petty, a Design Leader with 15 years experience building startups. 
-I'm Staff Designer at Incident — a platform for modern incident management. I was Founding Designer at Cord, helped design Google Play Console, led the teams at GoCardless and Lyst, and ran Design Club. In a past life I did branding at Wolff Olins. 
-Email or LinkedIn me, or view some recent projects.</h1>
+I'm Staff Designer at <a href="https://incident.io" target="_blank" rel="noopener">Incident.io</a>&thinsp;&mdash;&thinsp;a platform for modern incident management. 
+I was Founding Designer at <a href="https://techcrunch.com/2021/10/07/cord-gets-17-5m-to-get-more-devs-plugged-into-its-api-for-real-time-collaboration/" target="_blank" rel="noopener">Cord</a>, helped design Google Play Console, 
+led the teams at <a href="https://gocardless.com" target="_blank" rel="noopener">GoCardless</a> and <a href="https://lyst.com" target="_blank" rel="noopener">Lyst</a>, and ran Design Club. In a past life I did branding at <a href="https://wolffolins.com" target="_blank" rel="noopener">Wolff Olins</a>.<br/><br/>
+<a href="mailto:hello@anothertompetty.com">Email</a> or <a href="https://linkedin.com/in/tompetty" target="_blank" rel="noopener">LinkedIn</a> me, or view some recent projects:</h1>
         </div>
       </div>
       <hr className="section-divider" />

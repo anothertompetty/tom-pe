@@ -8,7 +8,9 @@
   --color-divider: rgba(0, 0, 0, 0.08);
   
   /* Typography */
-  --font-family: 'Unica77 LL', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+  --font-family: 'Octave Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --font-family-medium: 'Octave Medium', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
     Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   
   /* Spacing */
@@ -26,8 +28,8 @@
   --text-base: 20px;
   
   /* Line Heights */
-  --line-height-tight: 23px;
-  --line-height-base: 27px;
+  --line-height-tight: 22px;
+  --line-height-base: 28px;
   
   /* Opacity */
   --opacity-light: 0.04;
@@ -40,6 +42,25 @@
   --color-accent: #3b82f6;
   --color-tag-bg: rgba(255, 255, 255, 0.04);
   --color-divider: rgba(255, 255, 255, 0.08);
+}
+
+/* Font Declarations */
+@font-face {
+  font-family: 'Octave Regular';
+  src: url('/src/assets/fonts/Octave-Regular.woff2') format('woff2'),
+       url('/src/assets/fonts/Octave-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Octave Medium';
+  src: url('/src/assets/fonts/Octave-Medium.woff2') format('woff2'),
+       url('/src/assets/fonts/Octave-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
 }
 
 /* Base Styles */
@@ -85,13 +106,19 @@ body {
 h1, h2, h3, p {
   text-align: left;
   font-weight: 400;
+  font-family: var(--font-family);
+}
+
+h1, h2, h3, .social-links a {
+  font-family: var(--font-family-regular);
 }
 
 h1 {
   font-size: var(--text-base);
+  letter-spacing: -0.2px;
   line-height: var(--line-height-base);
-  width: 100%;
   margin: 0;
+  width: 100%;
 }
 
 @media (max-width: 1024px) {
@@ -246,4 +273,31 @@ p {
 
 .project-text p {
   margin-bottom: 0;
+}
+
+/* Links */
+a {
+  color: var(--color-text);
+  text-decoration: none;
+  font-family: var(--font-family-medium);
+  position: relative;
+  transition: color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 1.5px;
+  bottom: -1px;
+  left: 0;
+  background-color: var(--color-text);
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
