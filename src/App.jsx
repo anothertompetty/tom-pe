@@ -9,39 +9,34 @@ const projects = [
     media: [
       {
         type: 'image',
-        src: '/src/assets/images/incident/mobile-hand.png',
-        alt: 'Mobile interface for incident management'
-      }
+        src: '/src/assets/images/incident/incident-dashboard-home.png',
+        alt: 'Dashboard overview'
+      },
+      {
+        type: 'image',
+        src: '/src/assets/images/incident/incident-dashboard-investigations.png',
+        alt: 'Dashboard overview'
+      },
     ],
     subProjects: [
-      {
-        description: "Redesigned the shift management system to make it easier for teams to coordinate on-call schedules. Created an intuitive interface for managing rotations and handling escalations.",
-        media: [
-          {
-            type: 'video',
-            src: '/src/assets/videos/incident/shift-cards.mov',
-            alt: 'Shift management interface'
-          },
-          {
-            type: 'image',
-            src: '/src/assets/images/incident/incident-dashboard-home.png',
-            alt: 'Dashboard overview'
-          }
-        ]
-      },
       {
         description: "Created a seamless mobile experience for on-call engineers to manage incidents on the go. Focused on quick actions and clear status updates for critical situations.",
         media: [
           {
-            type: 'image',
-            src: '/src/assets/images/incident/mobile-escalation.png',
+            type: 'video',
+            src: '/src/assets/videos/incident/on-call-cards-animation-2.mov',
             alt: 'Mobile escalation interface'
           },
           {
             type: 'image',
-            src: '/src/assets/images/incident/mobile-cover-request.png',
-            alt: 'Cover request interface'
-          }
+            src: '/src/assets/images/incident/mobile-hand.png',
+            alt: 'Mobile interface for incident management'
+          },
+          {
+            type: 'video',
+            src: '/src/assets/videos/incident/cover-request-animation-2.mov',
+            alt: 'Mobile escalation interface'
+          },
         ]
       }
     ]
@@ -189,11 +184,11 @@ function App() {
       <div className="project-content">
         <div className="header-text"></div>
         <div className="header-text">
-          <h1>I'm Tom, a Designer with 15 years experience building and leading startups. 
-Most recently I was Staff Designer at <a href="https://incident.io" target="_blank" rel="noopener">Incident.io</a>&thinsp;&mdash;&thinsp;a platform for modern incident management. 
-I was Founding Designer at <a href="https://techcrunch.com/2021/10/07/cord-gets-17-5m-to-get-more-devs-plugged-into-its-api-for-real-time-collaboration/" target="_blank" rel="noopener">Cord</a>, helped design <a href="https://android-developers.googleblog.com/2020/06/introducing-new-google-play-console-beta.html" target="_blank" rel="noopener">Google Play Console</a>, 
-led the teams at <a href="https://gocardless.com" target="_blank" rel="noopener">GoCardless</a> and <a href="https://lyst.com" target="_blank" rel="noopener">Lyst</a>, and ran Design Club. In a past life I did branding at <a href="https://wolffolins.com" target="_blank" rel="noopener">Wolff Olins</a>.<br/><br/>
-<a href="mailto:hello@anothertompetty.com">Email</a> or <a href="https://linkedin.com/in/tompetty" target="_blank" rel="noopener">LinkedIn</a> me, or view some recent projects:</h1>
+          <h1>I'm Tom, a Designer with 15 years experience building and leading startups.
+            Most recently I was Staff Designer at <a href="https://incident.io" target="_blank" rel="noopener">Incident.io</a>&thinsp;&mdash;&thinsp;a platform for modern incident management.
+            I was Founding Designer at <a href="https://techcrunch.com/2021/10/07/cord-gets-17-5m-to-get-more-devs-plugged-into-its-api-for-real-time-collaboration/" target="_blank" rel="noopener">Cord</a>, helped design <a href="https://android-developers.googleblog.com/2020/06/introducing-new-google-play-console-beta.html" target="_blank" rel="noopener">Google Play Console</a>,
+            led the teams at <a href="https://gocardless.com" target="_blank" rel="noopener">GoCardless</a> and <a href="https://lyst.com" target="_blank" rel="noopener">Lyst</a>, and ran Design Club. In a past life I did branding at <a href="https://wolffolins.com" target="_blank" rel="noopener">Wolff Olins</a>.<br /><br />
+            <a href="mailto:hello@anothertompetty.com">Email</a> or <a href="https://linkedin.com/in/tompetty" target="_blank" rel="noopener">LinkedIn</a> me, or view some recent projects:</h1>
         </div>
       </div>
       <hr className="section-divider" />
@@ -211,8 +206,8 @@ led the teams at <a href="https://gocardless.com" target="_blank" rel="noopener"
             <a href="https://linkedin.com/in/tompetty" target="_blank" rel="noopener noreferrer">LinkedIn</a>
           </div>
         </div>
-        <button 
-          className="theme-toggle" 
+        <button
+          className="theme-toggle"
           onClick={toggleTheme}
           aria-label="Toggle theme"
         >

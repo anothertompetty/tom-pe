@@ -50,10 +50,6 @@
 }
 
 /* Sub-projects */
-.sub-project {
-  margin-top: var(--space-divider);
-}
-
 .sub-project .project-text {
   top: var(--space-md);
 }
