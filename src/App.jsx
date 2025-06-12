@@ -124,34 +124,19 @@ const projects = [
             alt: 'Cord neon logo'
           },
           {
+            type: 'video',
+            src: '/src/assets/videos/cord/patents.mov',
+            alt: 'Cord patent documentation'
+          },
+          {
             type: 'image',
             src: '/src/assets/images/cord/cord-tote.png',
             alt: 'Cord branded tote bag'
           },
           {
             type: 'image',
-            src: '/src/assets/images/cord/cord-billboard.png',
-            alt: 'Cord billboard in San Francisco'
-          }
-        ]
-      },
-      {
-        description: "Designed Cord's office space and company culture, creating an environment that fostered creativity and collaboration. Developed a physical space that reflected our brand values.",
-        media: [
-          {
-            type: 'image',
             src: '/src/assets/images/cord/cord-office.png',
             alt: 'Cord office space'
-          },
-          {
-            type: 'image',
-            src: '/src/assets/images/cord/cord-patent-1.png',
-            alt: 'Cord patent documentation'
-          },
-          {
-            type: 'image',
-            src: '/src/assets/images/cord/cord-patent-2.png',
-            alt: 'Cord patent documentation'
           }
         ]
       }
