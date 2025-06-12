@@ -63,6 +63,21 @@ const projects = [
     ],
     subProjects: [
       {
+        description: "Created a comprehensive set of brand assets including merchandise, illustrations, and marketing materials. Designed everything from t-shirts to office decor to create a cohesive brand experience.",
+        media: [
+          {
+            type: 'image',
+            src: '/src/assets/images/incident-brand/billboard-mockup.png',
+            alt: 'Branded socks'
+          },
+          {
+            type: 'video',
+            src: '/src/assets/videos/incident-brand/billboards.mov',
+            alt: 'Event opening sequence'
+          }
+        ]
+      },
+      {
         description: "Designed and executed brand presence for major industry events and conferences. Created immersive experiences that brought the incident.io brand to life in physical spaces.",
         media: [
           {
@@ -84,37 +99,22 @@ const projects = [
     description: "Founded and led design at Cord, a developer collaboration platform. Created a comprehensive design system and brand identity that scaled with the company's growth.",
     media: [
       {
+        type: 'video',
+        src: '/src/assets/videos/cord/cord-homepage.mov',
+        alt: 'Cord homepage walkthrough'
+      },
+      {
         type: 'image',
-        src: '/src/assets/images/cord/cord-billboard.png',
-        alt: 'Cord billboard in San Francisco'
+        src: '/src/assets/images/cord/cord-features-page.png',
+        alt: 'Features overview page'
+      },
+      {
+        type: 'image',
+        src: '/src/assets/images/cord/cord-docs-page.png',
+        alt: 'Documentation page'
       }
     ],
     subProjects: [
-      {
-        description: "Designed the core product experience, focusing on developer workflows and collaboration features. Created a comprehensive design system that made it easy to build and maintain complex interfaces.",
-        media: [
-          {
-            type: 'video',
-            src: '/src/assets/videos/cord/cord-homepage.mov',
-            alt: 'Cord homepage walkthrough'
-          },
-          {
-            type: 'image',
-            src: '/src/assets/images/cord/cord-features-page.png',
-            alt: 'Features overview page'
-          },
-          {
-            type: 'image',
-            src: '/src/assets/images/cord/cord-components-overview.png',
-            alt: 'Design system components'
-          },
-          {
-            type: 'image',
-            src: '/src/assets/images/cord/cord-docs-page.png',
-            alt: 'Documentation page'
-          }
-        ]
-      },
       {
         description: "Developed Cord's brand identity and marketing materials, from digital assets to physical merchandise. Created a distinctive visual language that resonated with developers.",
         media: [
@@ -130,8 +130,8 @@ const projects = [
           },
           {
             type: 'image',
-            src: '/src/assets/images/cord/cord-hoodie.png',
-            alt: 'Cord branded hoodie'
+            src: '/src/assets/images/cord/cord-billboard.png',
+            alt: 'Cord billboard in San Francisco'
           }
         ]
       },
