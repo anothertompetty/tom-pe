@@ -29,7 +29,7 @@ const projects = [
           },
           {
             type: 'image',
-            src: '/src/assets/images/incident/mobile-hand.png',
+            src: '/src/assets/images/incident/escalation-on-device.jpg',
             alt: 'Mobile interface for incident management'
           },
           {
@@ -46,27 +46,22 @@ const projects = [
     description: "Developed and evolved the incident.io brand identity, creating a cohesive visual language across all touchpoints.",
     media: [
       {
+        type: 'video',
+        src: '/src/assets/videos/incident-brand/home-page-animation.mov',
+        alt: 'incident.io brand guidelines'
+      },
+      {
         type: 'image',
-        src: '/src/assets/images/incident-brand/site-home.png',
-        alt: 'incident.io homepage'
+        src: '/src/assets/images/incident-brand/incident-careers-page.png',
+        alt: 'incident.io brand guidelines'
+      },
+      {
+        type: 'video',
+        src: '/src/assets/videos/incident-brand/swag.mov',
+        alt: 'incident.io brand guidelines'
       }
     ],
     subProjects: [
-      {
-        description: "Created a comprehensive set of brand assets including merchandise, illustrations, and marketing materials. Designed everything from t-shirts to office decor to create a cohesive brand experience.",
-        media: [
-          {
-            type: 'image',
-            src: '/src/assets/images/incident/incident-socks.png',
-            alt: 'Branded socks'
-          },
-          {
-            type: 'image',
-            src: '/src/assets/images/incident-brand/dont-panic-t-shirt.jpg',
-            alt: 'Branded t-shirt'
-          }
-        ]
-      },
       {
         description: "Designed and executed brand presence for major industry events and conferences. Created immersive experiences that brought the incident.io brand to life in physical spaces.",
         media: [
