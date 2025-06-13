@@ -5,7 +5,7 @@ import React from 'react'
 const projects = [
   {
     title: "Product at incident.io",
-    description: "As the most senior designer at incident.io, I led multiple large scale projects across the product. For example, I was design lead on the mission-critial AI Investigations feature, and I spearheaded the creation and rollout of a cohesive design system. I was also the hiring manager for Product and Brand Design.",
+    description: "During my time at incident.io, I led multiple large scale initiatives. For example, I was design lead on the mission-critial AI Investigations feature, and I spearheaded the creation and rollout of a cohesive design system. I was also the hiring manager for Product and Brand Design.",
     media: [
       {
         type: 'image',
@@ -96,7 +96,7 @@ const projects = [
   },
   {
     title: "Cord",
-    description: "Founded and led design at Cord, a developer collaboration platform. Created a comprehensive design system and brand identity that scaled with the company's growth.",
+    description: "I was Founding Designer at Cord, a platform for adding real-time collaboration to your apps. From designing an MVP, to helping close 6-figure deals, to hiring for all disciplines, I executed and led across the company.",
     media: [
       {
         type: 'video',
@@ -116,7 +116,7 @@ const projects = [
     ],
     subProjects: [
       {
-        description: "Developed Cord's brand identity and marketing materials, from digital assets to physical merchandise. Created a distinctive visual language that resonated with developers.",
+        description: "As a founding employee, you can do fun things. For example, I partnered with Bakken & Bæck on the early brand design, had my work patented, and made all the swag.",
         media: [
           {
             type: 'image',
