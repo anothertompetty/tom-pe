@@ -10,12 +10,12 @@ const projects = [
       {
         type: 'image',
         src: '/src/assets/images/incident/incident-dashboard-home.png',
-        alt: 'Dashboard overview'
+        alt: 'Incident.io dashboard with status overview'
       },
       {
         type: 'image',
         src: '/src/assets/images/incident/incident-dashboard-investigations.png',
-        alt: 'Dashboard overview'
+        alt: 'Incident.io investigations dashboard'
       },
     ],
     subProjects: [
@@ -24,18 +24,18 @@ const projects = [
         media: [
           {
             type: 'video',
-            src: '/src/assets/videos/incident/on-call-cards-animation-2.mov',
-            alt: 'Mobile escalation interface'
+            src: '/src/assets/videos/incident/on-call-cards-animation-2.webm',
+            alt: 'Mobile on-call schedule interface'
           },
           {
             type: 'image',
             src: '/src/assets/images/incident/escalation-on-device.jpg',
-            alt: 'Mobile interface for incident management'
+            alt: 'Mobile incident escalation view'
           },
           {
             type: 'video',
-            src: '/src/assets/videos/incident/cover-request-animation-2.mov',
-            alt: 'Mobile escalation interface'
+            src: '/src/assets/videos/incident/cover-request-animation-2.webm',
+            alt: 'Cover request workflow demo'
           },
         ]
       }
@@ -47,18 +47,18 @@ const projects = [
     media: [
       {
         type: 'video',
-        src: '/src/assets/videos/incident-brand/home-page-animation.mov',
-        alt: 'incident.io brand guidelines'
+        src: '/src/assets/videos/incident-brand/home-page-animation.webm',
+        alt: 'Incident.io homepage animation'
       },
       {
         type: 'image',
         src: '/src/assets/images/incident-brand/incident-careers-page.png',
-        alt: 'incident.io brand guidelines'
+        alt: 'Incident.io careers page'
       },
       {
         type: 'video',
-        src: '/src/assets/videos/incident-brand/swag.mov',
-        alt: 'incident.io brand guidelines'
+        src: '/src/assets/videos/incident-brand/swag.webm',
+        alt: 'Incident.io merchandise showcase'
       }
     ],
     subProjects: [
@@ -67,13 +67,13 @@ const projects = [
         media: [
           {
             type: 'image',
-            src: '/src/assets/images/incident-brand/billboard-mockup.png',
-            alt: 'Branded socks'
+            src: '/src/assets/images/incident-brand/billboard-mockup.jpg',
+            alt: 'Incident.io billboard mockup'
           },
           {
             type: 'video',
-            src: '/src/assets/videos/incident-brand/billboards.mov',
-            alt: 'Event opening sequence'
+            src: '/src/assets/videos/incident-brand/billboards.webm',
+            alt: 'Billboard campaign animation'
           }
         ]
       },
@@ -82,13 +82,13 @@ const projects = [
         media: [
           {
             type: 'video',
-            src: '/src/assets/videos/incident-brand/sev0-opening.mp4',
-            alt: 'Event opening sequence'
+            src: '/src/assets/videos/incident-brand/sev0-opening.webm',
+            alt: 'Sev0 conference opening sequence'
           },
           {
             type: 'image',
             src: '/src/assets/images/incident-brand/sev0-background.jpg',
-            alt: 'Event backdrop'
+            alt: 'Sev0 conference stage design'
           }
         ]
       }
@@ -100,18 +100,18 @@ const projects = [
     media: [
       {
         type: 'video',
-        src: '/src/assets/videos/cord/cord-homepage.mov',
-        alt: 'Cord homepage walkthrough'
+        src: '/src/assets/videos/cord/cord-homepage.webm',
+        alt: 'Cord homepage demo'
       },
       {
         type: 'image',
         src: '/src/assets/images/cord/cord-features-page.png',
-        alt: 'Features overview page'
+        alt: 'Cord features overview'
       },
       {
         type: 'image',
         src: '/src/assets/images/cord/cord-docs-page.png',
-        alt: 'Documentation page'
+        alt: 'Cord documentation page'
       }
     ],
     subProjects: [
@@ -125,13 +125,13 @@ const projects = [
           },
           {
             type: 'video',
-            src: '/src/assets/videos/cord/patents.mov',
-            alt: 'Cord patent documentation'
+            src: '/src/assets/videos/cord/patents.webm',
+            alt: 'Cord patents showcase'
           },
           {
             type: 'image',
             src: '/src/assets/images/cord/cord-tote.png',
-            alt: 'Cord branded tote bag'
+            alt: 'Cord branded tote'
           }
         ]
       }
