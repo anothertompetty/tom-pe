@@ -14,6 +14,11 @@ function MediaItem({ item }) {
     )
   }
   
+  // For videos, we'll use the same filename but different extensions
+  const videoSrc = item.src
+  const webmSrc = videoSrc.replace(/\.(mov|mp4)$/, '.webm')
+  const movSrc = videoSrc.replace(/\.webm$/, '.mov')
+  
   return (
     <video
       autoPlay
@@ -22,7 +27,9 @@ function MediaItem({ item }) {
       playsInline
       loading="lazy"
     >
-      <source src={item.src} type="video/mp4" />
+      <source src={webmSrc} type="video/webm" />
+      <source src={movSrc} type="video/quicktime" />
+      <source src={videoSrc} type="video/mp4" />
     </video>
   )
 }
