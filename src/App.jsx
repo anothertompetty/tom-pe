@@ -5,7 +5,7 @@ import React from 'react'
 const projects = [
   {
     title: "Product at incident.io",
-    description: "Leading product design for incident.io, a platform for modern incident management. Focused on creating intuitive interfaces for complex workflows.",
+    description: "As the most senior designer at incident.io, I led multiple large scale projects across the product. For example, I was design lead on the mission-critial AI Investigations feature, and I spearheaded the creation and rollout of a cohesive design system. I was also the hiring manager for Product and Brand Design.",
     media: [
       {
         type: 'image',
@@ -20,7 +20,7 @@ const projects = [
     ],
     subProjects: [
       {
-        description: "Created a seamless mobile experience for on-call engineers to manage incidents on the go. Focused on quick actions and clear status updates for critical situations.",
+        description: "On-call was incident.io's major release for 2024, putting them directly in competition with PagerDuty. I designed the On-call mobile app, which allows on-call engineers to manage incidents on the go, as well as all the brand and marketing materials required for a successful launch.",
         media: [
           {
             type: 'video',
@@ -43,7 +43,7 @@ const projects = [
   },
   {
     title: "Brand at incident.io",
-    description: "Developed and evolved the incident.io brand identity, creating a cohesive visual language across all touchpoints.",
+    description: "From redesigning the website, to coining the phrase 'Move fast when you break things', a big chunk of my work at incident.io was finding ways to push the brand forward in an otherwise stale market.",
     media: [
       {
         type: 'video',
@@ -63,7 +63,7 @@ const projects = [
     ],
     subProjects: [
       {
-        description: "Created a comprehensive set of brand assets including merchandise, illustrations, and marketing materials. Designed everything from t-shirts to office decor to create a cohesive brand experience.",
+        description: "One fun project was designing and rolling out incident.io's first billboard campaign, across San Francisco, and 500+ sites in London.",
         media: [
           {
             type: 'image',
@@ -78,7 +78,7 @@ const projects = [
         ]
       },
       {
-        description: "Designed and executed brand presence for major industry events and conferences. Created immersive experiences that brought the incident.io brand to life in physical spaces.",
+        description: "I created the brand and marketing materials for incident.io's first conference, SEV0 in San Francisco.",
         media: [
           {
             type: 'video',
