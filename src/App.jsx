@@ -132,11 +132,6 @@ const projects = [
             type: 'image',
             src: '/src/assets/images/cord/cord-tote.png',
             alt: 'Cord branded tote bag'
-          },
-          {
-            type: 'image',
-            src: '/src/assets/images/cord/cord-office.png',
-            alt: 'Cord office space'
           }
         ]
       }
@@ -180,11 +175,7 @@ function App() {
       ))}
       <div className="footer">
         <div className="footer-text">
-          <p><strong>&copy; 2025 Tom Petty</strong></p>
-          <div className="social-links">
-            <a href="hello@anothertompetty.com">Email</a>
-            <a href="https://linkedin.com/in/tompetty" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          </div>
+          <p>&copy; 2025 Tom Petty &nbsp;&middot;&nbsp; <a href="hello@anothertompetty.com">Email</a> &nbsp;&middot;&nbsp; <a href="https://linkedin.com/in/tompetty" target="_blank" rel="noopener">LinkedIn</a></p>
         </div>
         <button
           className="theme-toggle"

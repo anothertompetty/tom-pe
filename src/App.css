@@ -191,7 +191,7 @@ p {
   justify-content: space-between;
   align-items: flex-end;
   padding-bottom: var(--space-md);
-  padding-top: var(--space-xl);
+  padding-top: 40px;
   background-color: var(--color-background);
 }
 
