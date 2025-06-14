@@ -18,11 +18,9 @@ function MediaItem({ item }) {
     )
   }
   
-  // For videos, we need to handle both MP4 and WebM sources correctly
+  // For videos, we'll use the same filename but different extensions
   const videoSrc = item.src
-  const isWebm = videoSrc.endsWith('.webm')
-  const mp4Src = isWebm ? videoSrc.replace('.webm', '.mp4') : videoSrc
-  const webmSrc = isWebm ? videoSrc : videoSrc.replace('.mp4', '.webm')
+  const webmSrc = videoSrc.replace(/\.mp4$/, '.webm')
   
   return (
     <video
@@ -35,9 +33,9 @@ function MediaItem({ item }) {
       onError={() => setError(true)}
       style={{ display: error ? 'none' : 'block' }}
     >
-      <source src={mp4Src} type="video/mp4" />
+      <source src={videoSrc} type="video/mp4" />
       <source src={webmSrc} type="video/webm" />
-      <p>Your browser doesn't support HTML5 video. Here's a <a href={mp4Src}>link to the video</a> instead.</p>
+      <p>Your browser doesn't support HTML5 video. Here's a <a href={videoSrc}>link to the video</a> instead.</p>
     </video>
   )
 }
