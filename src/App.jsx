@@ -21,6 +21,8 @@ import incidentDashboardInvestigations from './assets/images/incident/incident-d
 import incidentOnCallCards from './assets/videos/incident/on-call-cards-animation-2.webm'
 import incidentEscalation from './assets/images/incident/escalation-on-device.jpg'
 import incidentCoverRequest from './assets/videos/incident/cover-request-animation-2.webm'
+import moonIcon from './assets/images/icons/moon.svg'
+import sunglassesIcon from './assets/images/icons/sunglasses.svg'
 
 const projects = [
   {
@@ -203,9 +205,9 @@ function App() {
           aria-label="Toggle theme"
         >
           {theme === 'light' ? (
-            <img src="/src/assets/images/icons/moon.svg" alt="Dark mode" width="16" height="16" />
+            <img src={moonIcon} alt="Dark mode" width="16" height="16" />
           ) : (
-            <img src="/src/assets/images/icons/sunglasses.svg" alt="Light mode" width="16" height="16" />
+            <img src={sunglassesIcon} alt="Light mode" width="16" height="16" />
           )}
         </button>
       </div>
