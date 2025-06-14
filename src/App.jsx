@@ -118,7 +118,7 @@ const projects = [
   },
   {
     title: "Cord",
-    description: "I was Founding Designer at Cord, a platform for adding real-time collaboration to your apps. From designing an MVP, to helping close 6-figure deals, to hiring for all disciplines, I executed and led across the company.",
+    description: "I was Founding Designer at Cord, a platform for adding real-time collaboration to your apps. From designing an MVP, to helping close 6-figure deals, to hiring for all teams, I executed and led across the company. We never reached true PMF, so now Cord lives on a farm and gets stroked every day.",
     media: [
       {
         type: 'video',
@@ -184,7 +184,7 @@ function App() {
           <h1>I'm Tom, a Designer with 15 years experience building and leading startups.
             Most recently I was Staff Designer at <a href="https://incident.io" target="_blank" rel="noopener">Incident.io</a>&thinsp;&mdash;&thinsp;a platform for modern incident management.
             I was Founding Designer at <a href="https://techcrunch.com/2021/10/07/cord-gets-17-5m-to-get-more-devs-plugged-into-its-api-for-real-time-collaboration/" target="_blank" rel="noopener">Cord</a>, helped design <a href="https://android-developers.googleblog.com/2020/06/introducing-new-google-play-console-beta.html" target="_blank" rel="noopener">Google Play Console</a>,
-            led the teams at <a href="https://gocardless.com" target="_blank" rel="noopener">GoCardless</a> and <a href="https://lyst.com" target="_blank" rel="noopener">Lyst</a>, and ran Design Club. In a past life I did branding at <a href="https://wolffolins.com" target="_blank" rel="noopener">Wolff Olins</a>.<br /><br />
+            led the teams at <a href="https://gocardless.com" target="_blank" rel="noopener">GoCardless</a> and <a href="https://lyst.com" target="_blank" rel="noopener">Lyst</a>, and ran <a href="https://designclub.io" target="_blank" rel="noopener">Design Club</a>. In a past life I did branding at <a href="https://wolffolins.com" target="_blank" rel="noopener">Wolff Olins</a>.<br /><br />
             <a href="mailto:hello@anothertompetty.com">Email</a> or <a href="https://linkedin.com/in/tompetty" target="_blank" rel="noopener">LinkedIn</a> me, or view some recent projects:</h1>
         </div>
       </div>

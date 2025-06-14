@@ -1,6 +1,7 @@
 /* Project Container */
 .project {
   position: relative;
+  text-wrap: pretty;
 }
 
 /* Project Content Layout */
