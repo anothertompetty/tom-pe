@@ -18,9 +18,14 @@ function MediaItem({ item }) {
     )
   }
   
-  // For videos, we'll use the same filename but different extensions
+  // For videos, we need to handle both MP4 and WebM sources correctly
   const videoSrc = item.src
-  const webmSrc = videoSrc.replace(/\.mp4$/, '.webm')
+  const isWebm = videoSrc.endsWith('.webm')
+  const mp4Src = isWebm ? videoSrc.replace('.webm', '.mp4') : videoSrc
+  const webmSrc = isWebm ? videoSrc : videoSrc.replace('.mp4', '.webm')
+  
+  // Log video sources for debugging
+  console.log('Video sources:', { mp4Src, webmSrc })
   
   return (
     <video
@@ -30,12 +35,15 @@ function MediaItem({ item }) {
       playsInline
       preload="metadata"
       controls={false}
-      onError={() => setError(true)}
+      onError={(e) => {
+        console.error('Video error:', e)
+        setError(true)
+      }}
       style={{ display: error ? 'none' : 'block' }}
     >
-      <source src={videoSrc} type="video/mp4" />
+      <source src={mp4Src} type="video/mp4" />
       <source src={webmSrc} type="video/webm" />
-      <p>Your browser doesn't support HTML5 video. Here's a <a href={videoSrc}>link to the video</a> instead.</p>
+      <p>Your browser doesn't support HTML5 video. Here's a <a href={mp4Src}>link to the video</a> instead.</p>
     </video>
   )
 }
