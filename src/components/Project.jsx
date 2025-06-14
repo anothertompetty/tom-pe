@@ -1,6 +1,14 @@
 import React, { useState } from 'react'
 import './Project.css'
 
+// Helper function to get the correct asset path
+function getAssetPath(path) {
+  // Remove any leading slashes and src/ prefix
+  const cleanPath = path.replace(/^\/?src\//, '')
+  // Return the path relative to the assets directory
+  return `/${cleanPath}`
+}
+
 // MediaItem component to handle both images and videos
 function MediaItem({ item }) {
   const [error, setError] = useState(false)
@@ -8,7 +16,7 @@ function MediaItem({ item }) {
   if (item.type === 'image') {
     return (
       <img 
-        src={item.src} 
+        src={getAssetPath(item.src)} 
         alt={item.alt} 
         loading="lazy"
         draggable="false"
@@ -25,7 +33,10 @@ function MediaItem({ item }) {
   const webmSrc = isWebm ? videoSrc : videoSrc.replace('.mp4', '.webm')
   
   // Log video sources for debugging
-  console.log('Video sources:', { mp4Src, webmSrc })
+  console.log('Video sources:', { 
+    mp4Src: getAssetPath(mp4Src), 
+    webmSrc: getAssetPath(webmSrc) 
+  })
   
   return (
     <video
@@ -41,9 +52,9 @@ function MediaItem({ item }) {
       }}
       style={{ display: error ? 'none' : 'block' }}
     >
-      <source src={mp4Src} type="video/mp4" />
-      <source src={webmSrc} type="video/webm" />
-      <p>Your browser doesn't support HTML5 video. Here's a <a href={mp4Src}>link to the video</a> instead.</p>
+      <source src={getAssetPath(mp4Src)} type="video/mp4" />
+      <source src={getAssetPath(webmSrc)} type="video/webm" />
+      <p>Your browser doesn't support HTML5 video. Here's a <a href={getAssetPath(mp4Src)}>link to the video</a> instead.</p>
     </video>
   )
 }
