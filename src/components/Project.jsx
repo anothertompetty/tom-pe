@@ -24,7 +24,7 @@ function MediaItem({ item }) {
       muted
       loop
       playsInline
-      loading="lazy"
+      // loading="lazy"
     >
       <source src={webmSrc} type="video/webm" />
       <source src={videoSrc} type="video/mp4" />
