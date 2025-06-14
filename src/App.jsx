@@ -16,6 +16,11 @@ import cordDocs from './assets/images/cord/cord-docs-page.png'
 import cordLogo from './assets/images/cord/cord-logo-neon.png'
 import cordPatents from './assets/videos/cord/patents.webm'
 import cordTote from './assets/images/cord/cord-tote.png'
+import incidentDashboardHome from './assets/images/incident/incident-dashboard-home.png'
+import incidentDashboardInvestigations from './assets/images/incident/incident-dashboard-investigations.png'
+import incidentOnCallCards from './assets/videos/incident/on-call-cards-animation-2.webm'
+import incidentEscalation from './assets/images/incident/escalation-on-device.jpg'
+import incidentCoverRequest from './assets/videos/incident/cover-request-animation-2.webm'
 
 const projects = [
   {
@@ -24,12 +29,12 @@ const projects = [
     media: [
       {
         type: 'image',
-        src: '/src/assets/images/incident/incident-dashboard-home.png',
+        src: incidentDashboardHome,
         alt: 'Incident.io dashboard with status overview'
       },
       {
         type: 'image',
-        src: '/src/assets/images/incident/incident-dashboard-investigations.png',
+        src: incidentDashboardInvestigations,
         alt: 'Incident.io investigations dashboard'
       },
     ],
@@ -39,17 +44,17 @@ const projects = [
         media: [
           {
             type: 'video',
-            src: '/src/assets/videos/incident/on-call-cards-animation-2.webm',
+            src: incidentOnCallCards,
             alt: 'Mobile on-call schedule interface'
           },
           {
             type: 'image',
-            src: '/src/assets/images/incident/escalation-on-device.jpg',
+            src: incidentEscalation,
             alt: 'Mobile incident escalation view'
           },
           {
             type: 'video',
-            src: '/src/assets/videos/incident/cover-request-animation-2.webm',
+            src: incidentCoverRequest,
             alt: 'Cover request workflow demo'
           },
         ]
