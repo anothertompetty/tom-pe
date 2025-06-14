@@ -1,10 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './Project.css'
 
 // MediaItem component to handle both images and videos
 function MediaItem({ item }) {
-  const [error, setError] = useState(false)
-
   if (item.type === 'image') {
     return (
       <img 
@@ -12,13 +10,13 @@ function MediaItem({ item }) {
         alt={item.alt} 
         loading="lazy"
         draggable="false"
-        onError={() => setError(true)}
-        style={{ display: error ? 'none' : 'block' }}
       />
     )
   }
   
-https://www.tom.pe/
+  // For videos, we'll use the same filename but different extensions
+  const videoSrc = item.src
+  const webmSrc = videoSrc.replace(/\.mp4$/, '.webm')
   
   return (
     <video
@@ -26,14 +24,10 @@ https://www.tom.pe/
       muted
       loop
       playsInline
-      preload="metadata"
-      controls={false}
-      onError={() => setError(true)}
-      style={{ display: error ? 'none' : 'block' }}
+      loading="lazy"
     >
-      <source src={videoSrc} type="video/mp4" />
       <source src={webmSrc} type="video/webm" />
-      <p>Your browser doesn't support HTML5 video. Here's a <a href={videoSrc}>link to the video</a> instead.</p>
+      <source src={videoSrc} type="video/mp4" />
     </video>
   )
 }
