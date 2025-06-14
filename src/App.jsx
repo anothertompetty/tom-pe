@@ -2,6 +2,21 @@ import { Project } from './components/Project'
 import './App.css'
 import React from 'react'
 
+// Import all assets
+import incidentHomeAnimation from './assets/videos/incident-brand/home-page-animation.webm'
+import incidentCareersPage from './assets/images/incident-brand/incident-careers-page.png'
+import incidentSwag from './assets/videos/incident-brand/swag.webm'
+import incidentBillboard from './assets/images/incident-brand/billboard-mockup.jpg'
+import incidentBillboards from './assets/videos/incident-brand/billboards.webm'
+import incidentSev0 from './assets/videos/incident-brand/sev0-opening.webm'
+import incidentSev0Bg from './assets/images/incident-brand/sev0-background.jpg'
+import cordHomepage from './assets/videos/cord/cord-homepage.webm'
+import cordFeatures from './assets/images/cord/cord-features-page.png'
+import cordDocs from './assets/images/cord/cord-docs-page.png'
+import cordLogo from './assets/images/cord/cord-logo-neon.png'
+import cordPatents from './assets/videos/cord/patents.webm'
+import cordTote from './assets/images/cord/cord-tote.png'
+
 const projects = [
   {
     title: "Product at incident.io",
@@ -47,17 +62,17 @@ const projects = [
     media: [
       {
         type: 'video',
-        src: '/src/assets/videos/incident-brand/home-page-animation.webm',
+        src: incidentHomeAnimation,
         alt: 'Incident.io homepage animation'
       },
       {
         type: 'image',
-        src: '/src/assets/images/incident-brand/incident-careers-page.png',
+        src: incidentCareersPage,
         alt: 'Incident.io careers page'
       },
       {
         type: 'video',
-        src: '/src/assets/videos/incident-brand/swag.webm',
+        src: incidentSwag,
         alt: 'Incident.io merchandise showcase'
       }
     ],
@@ -67,12 +82,12 @@ const projects = [
         media: [
           {
             type: 'image',
-            src: '/src/assets/images/incident-brand/billboard-mockup.jpg',
+            src: incidentBillboard,
             alt: 'Incident.io billboard mockup'
           },
           {
             type: 'video',
-            src: '/src/assets/videos/incident-brand/billboards.webm',
+            src: incidentBillboards,
             alt: 'Billboard campaign animation'
           }
         ]
@@ -82,12 +97,12 @@ const projects = [
         media: [
           {
             type: 'video',
-            src: '/src/assets/videos/incident-brand/sev0-opening.webm',
+            src: incidentSev0,
             alt: 'Sev0 conference opening sequence'
           },
           {
             type: 'image',
-            src: '/src/assets/images/incident-brand/sev0-background.jpg',
+            src: incidentSev0Bg,
             alt: 'Sev0 conference stage design'
           }
         ]
@@ -100,17 +115,17 @@ const projects = [
     media: [
       {
         type: 'video',
-        src: '/src/assets/videos/cord/cord-homepage.webm',
+        src: cordHomepage,
         alt: 'Cord homepage demo'
       },
       {
         type: 'image',
-        src: '/src/assets/images/cord/cord-features-page.png',
+        src: cordFeatures,
         alt: 'Cord features overview'
       },
       {
         type: 'image',
-        src: '/src/assets/images/cord/cord-docs-page.png',
+        src: cordDocs,
         alt: 'Cord documentation page'
       }
     ],
@@ -120,17 +135,17 @@ const projects = [
         media: [
           {
             type: 'image',
-            src: '/src/assets/images/cord/cord-logo-neon.png',
+            src: cordLogo,
             alt: 'Cord neon logo'
           },
           {
             type: 'video',
-            src: '/src/assets/videos/cord/patents.webm',
+            src: cordPatents,
             alt: 'Cord patents showcase'
           },
           {
             type: 'image',
-            src: '/src/assets/images/cord/cord-tote.png',
+            src: cordTote,
             alt: 'Cord branded tote'
           }
         ]
