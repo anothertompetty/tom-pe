@@ -27,7 +27,7 @@ import sunglassesIcon from './assets/images/icons/sunglasses.svg'
 const projects = [
   {
     title: "Product at incident.io",
-    description: "During my time at incident.io, I led multiple large scale initiatives. For example, I was design lead on the mission-critial AI Investigations feature, and I spearheaded the creation and rollout of a cohesive design system. I was also the hiring manager for Product and Brand Design.",
+    description: "During my time at incident.io, I led a series of large and important projects, including the big bet on AI Investigations. I also spearheaded the creation and rollout of a cohesive design system, and was the hiring manager across Product and Brand Design.",
     media: [
       {
         type: 'image',
@@ -42,7 +42,7 @@ const projects = [
     ],
     subProjects: [
       {
-        description: "On-call was incident.io's major release for 2024, putting them directly in competition with PagerDuty. I designed the On-call mobile app, which allows on-call engineers to manage incidents on the go, as well as all the brand and marketing materials required for a successful launch.",
+        description: "Releasing an On-call product (and going head to head with PagerDuty) was the priority for 2024. I designed the On-call mobile app, as well as all the brand and marketing materials. The launch exceeded expectations, with multiple customers doing complete rip-and-replace migrations from PagerDuty.",
         media: [
           {
             type: 'video',
