@@ -55,21 +55,8 @@ function MediaItem({ item }) {
     )
   }
   
-  // For videos, ensure we have both .mp4 and .webm sources
-  let videoSrc = item.src;
-  let webmSrc, mp4Src;
-
-  if (videoSrc.endsWith('.mp4')) {
-    mp4Src = videoSrc;
-    webmSrc = videoSrc.replace(/\.mp4$/, '.webm');
-  } else if (videoSrc.endsWith('.webm')) {
-    webmSrc = videoSrc;
-    mp4Src = videoSrc.replace(/\.webm$/, '.mp4');
-  } else {
-    // fallback: use as is
-    mp4Src = videoSrc;
-    webmSrc = videoSrc;
-  }
+  // For videos, we only handle MP4 format
+  const videoSrc = item.src;
   
   return (
     <video
@@ -78,10 +65,8 @@ function MediaItem({ item }) {
       loop
       playsInline
       preload="metadata" // Only load metadata initially
-      // Removed autoPlay - we'll control it with intersection observer
     >
-      <source src={webmSrc} type="video/webm" />
-      <source src={mp4Src} type="video/mp4" />
+      <source src={videoSrc} type="video/mp4" />
     </video>
   )
 }
