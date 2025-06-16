@@ -162,9 +162,13 @@ const projects = [
 ]
 
 function App() {
-  const [theme, setTheme] = React.useState(() => {
-    return localStorage.getItem('theme') || 'light'
-  })
+  const [theme, setTheme] = React.useState('light');
+
+  React.useEffect(() => {
+    // Only runs on client
+    const storedTheme = localStorage.getItem('theme');
+    if (storedTheme) setTheme(storedTheme);
+  }, []);
 
   // Update document theme when state changes
   React.useEffect(() => {
