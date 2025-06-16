@@ -27,7 +27,7 @@ import sunglassesIcon from './assets/images/icons/sunglasses.svg'
 const projects = [
   {
     title: "Product at incident.io",
-    description: "During my time at incident.io, I led a series of large and important projects, including the big bet on AI Investigations. I also spearheaded the creation and rollout of a cohesive design system, and was the hiring manager across Product and Brand Design.",
+    description: "During my time at incident.io, I led a series of large projects, including their big bet on AI Investigations. I also spearheaded the creation and rollout of a cohesive design system, and was the hiring manager across Product and Brand Design.",
     media: [
       {
         type: 'image',
