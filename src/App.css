@@ -47,8 +47,8 @@
 /* Font Declarations */
 @font-face {
   font-family: 'Octave Regular';
-  src: url('/src/assets/fonts/Octave-Regular.woff2') format('woff2'),
-       url('/src/assets/fonts/Octave-Regular.woff') format('woff');
+  src: url('/fonts/Octave-Regular.woff2') format('woff2'),
+       url('/fonts/Octave-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -56,8 +56,8 @@
 
 @font-face {
   font-family: 'Octave Medium';
-  src: url('/src/assets/fonts/Octave-Medium.woff2') format('woff2'),
-       url('/src/assets/fonts/Octave-Medium.woff') format('woff');
+  src: url('/fonts/Octave-Medium.woff2') format('woff2'),
+       url('/fonts/Octave-Medium.woff') format('woff');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -84,8 +84,11 @@ body {
 /* Layout */
 .app {
   padding: var(--space-md);
+  padding-top: var(--space-xl) !important;
   position: relative;
   min-height: 100vh;
+  max-width: 1280px;
+  margin: 0 auto;
 }
 
 #root {
@@ -96,7 +99,7 @@ body {
 }
 
 @media (max-width: 1024px) {
-    #root {
+    #root, .app {
         padding: var(--space-sm);
         padding-top: var(--space-lg);
     }

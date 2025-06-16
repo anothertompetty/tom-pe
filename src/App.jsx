@@ -2,27 +2,27 @@ import { Project } from './components/Project'
 import './App.css'
 import React from 'react'
 
-// Import all assets
-import incidentHomeAnimation from './assets/videos/incident-brand/home-page-animation.webm'
-import incidentCareersPage from './assets/images/incident-brand/incident-careers-page.png'
-import incidentSwag from './assets/videos/incident-brand/swag.webm'
-import incidentBillboard from './assets/images/incident-brand/billboard-mockup.jpg'
-import incidentBillboards from './assets/videos/incident-brand/billboards.webm'
-import incidentSev0 from './assets/videos/incident-brand/sev0-opening.webm'
-import incidentSev0Bg from './assets/images/incident-brand/sev0-background.jpg'
-import cordHomepage from './assets/videos/cord/cord-homepage.webm'
-import cordFeatures from './assets/images/cord/cord-features-page.png'
-import cordDocs from './assets/images/cord/cord-docs-page.png'
-import cordLogo from './assets/images/cord/cord-logo-neon.png'
-import cordPatents from './assets/videos/cord/patents.webm'
-import cordTote from './assets/images/cord/cord-tote.png'
-import incidentDashboardHome from './assets/images/incident/incident-dashboard-home.png'
-import incidentDashboardInvestigations from './assets/images/incident/incident-dashboard-investigations.png'
-import incidentOnCallCards from './assets/videos/incident/on-call-cards-animation-2.webm'
-import incidentEscalation from './assets/images/incident/escalation-on-device.jpg'
-import incidentCoverRequest from './assets/videos/incident/cover-request-animation-2.webm'
-import moonIcon from './assets/images/icons/moon.svg'
-import sunglassesIcon from './assets/images/icons/sunglasses.svg'
+// Asset paths as strings
+const incidentHomeAnimation = '/videos/incident-brand/home-page-animation.webm';
+const incidentCareersPage = '/images/incident-brand/incident-careers-page.png';
+const incidentSwag = '/videos/incident-brand/swag.webm';
+const incidentBillboard = '/images/incident-brand/billboard-mockup.jpg';
+const incidentBillboards = '/videos/incident-brand/billboards.webm';
+const incidentSev0 = '/videos/incident-brand/sev0-opening.webm';
+const incidentSev0Bg = '/images/incident-brand/sev0-background.jpg';
+const cordHomepage = '/videos/cord/cord-homepage.webm';
+const cordFeatures = '/images/cord/cord-features-page.png';
+const cordDocs = '/images/cord/cord-docs-page.png';
+const cordLogo = '/images/cord/cord-logo-neon.png';
+const cordPatents = '/videos/cord/patents.webm';
+const cordTote = '/images/cord/cord-tote.png';
+const incidentDashboardHome = '/images/incident/incident-dashboard-home.png';
+const incidentDashboardInvestigations = '/images/incident/incident-dashboard-investigations.png';
+const incidentOnCallCards = '/videos/incident/on-call-cards-animation-2.webm';
+const incidentEscalation = '/images/incident/escalation-on-device.jpg';
+const incidentCoverRequest = '/videos/incident/cover-request-animation-2.webm';
+const moonIcon = '/images/icons/moon.svg';
+const sunglassesIcon = '/images/icons/sunglasses.svg';
 
 const projects = [
   {
@@ -162,9 +162,13 @@ const projects = [
 ]
 
 function App() {
-  const [theme, setTheme] = React.useState(() => {
-    return localStorage.getItem('theme') || 'light'
-  })
+  const [theme, setTheme] = React.useState('light');
+
+  React.useEffect(() => {
+    // Only runs on client
+    const storedTheme = localStorage.getItem('theme');
+    if (storedTheme) setTheme(storedTheme);
+  }, []);
 
   // Update document theme when state changes
   React.useEffect(() => {

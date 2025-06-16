@@ -1,0 +1,439 @@
+/*!************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[3]!./src/components/Project.css ***!
+  \************************************************************************************************************************************************************************************************************************************************************************/
+/* Project Container */
+.project {
+  position: relative;
+  text-wrap: pretty;
+}
+
+/* Project Content Layout */
+.project-content {
+  display: grid;
+  grid-template-columns: 368px 1fr;
+  grid-gap: var(--space-column);
+  gap: var(--space-column);
+  margin-bottom: var(--space-lg);
+}
+
+/* Text Column */
+.project-text {
+  max-width: 368px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: var(--space-md);
+  height: -moz-fit-content;
+  height: fit-content;
+  align-self: start;
+}
+
+.project-text h2 {
+  margin-bottom: var(--space-sm);
+}
+
+.project-text p {
+  margin-bottom: 0;
+}
+
+/* Media Column */
+.project-media {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.media-item {
+  width: 100%;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.media-item img,
+.media-item video {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* Sub-projects */
+.sub-project .project-text {
+  top: var(--space-md);
+}
+
+/* Mobile Layout */
+@media (max-width: 1024px) {
+  /* Stack columns and center content */
+  .project-content {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Disable sticky positioning */
+  .project-text {
+    max-width: none;
+    position: relative;
+    top: 0;
+  }
+
+  /* Reset sub-project spacing */
+  .sub-project {
+    margin-top: var(--space-lg);
+  }
+
+  .sub-project .project-text {
+    top: 0;
+  }
+
+  /* Adjust media spacing */
+  .project-media {
+    gap: var(--space-md);
+  }
+} 
+/*!*********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[3]!./src/App.css ***!
+  \*********************************************************************************************************************************************************************************************************************************************************/
+/* Design System Variables */
+:root {
+  /* Colors - Light Theme */
+  --color-background: #F8F8F8;
+  --color-text: #101010;
+  --color-accent: #0070f3;
+  --color-tag-bg: rgba(0, 0, 0, 0.04);
+  --color-divider: rgba(0, 0, 0, 0.08);
+  
+  /* Typography */
+  --font-family: 'Octave Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --font-family-medium: 'Octave Medium', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  
+  /* Spacing */
+  --space-xs: 3px;
+  --space-sm: 9px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 120px;
+  --space-column: 32px;
+  --space-divider: 64px;
+  
+  /* Typography Scale */
+  --text-xs: 12px;
+  --text-sm: 16px;
+  --text-base: 20px;
+  
+  /* Line Heights */
+  --line-height-tight: 22px;
+  --line-height-base: 28px;
+  
+  /* Opacity */
+  --opacity-light: 0.04;
+  --opacity-medium: 0.08;
+}
+
+[data-theme="dark"] {
+  --color-background: #101010;
+  --color-text: #F8F8F8;
+  --color-accent: #3b82f6;
+  --color-tag-bg: rgba(255, 255, 255, 0.04);
+  --color-divider: rgba(255, 255, 255, 0.08);
+}
+
+/* Font Declarations */
+@font-face {
+  font-family: 'Octave Regular';
+  src: url('/fonts/Octave-Regular.woff2') format('woff2'),
+       url('/fonts/Octave-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Octave Medium';
+  src: url('/fonts/Octave-Medium.woff2') format('woff2'),
+       url('/fonts/Octave-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), 
+              color 0.2s cubic-bezier(0.4, 0, 0.2, 1), 
+              border-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--color-background);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Layout */
+.app {
+  padding: var(--space-md);
+  padding-top: var(--space-xl) !important;
+  position: relative;
+  min-height: 100vh;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: var(--space-lg);
+  padding-top: var(--space-xl);
+}
+
+@media (max-width: 1024px) {
+    #root, .app {
+        padding: var(--space-sm);
+        padding-top: var(--space-lg);
+    }
+  }
+
+/* Typography */
+h1, h2, h3, p {
+  text-align: left;
+  font-weight: 400;
+  font-family: var(--font-family);
+}
+
+h1, h2, h3, .social-links a {
+  font-family: var(--font-family-regular);
+}
+
+h1 {
+  font-size: var(--text-base);
+  letter-spacing: -0.2px;
+  line-height: var(--line-height-base);
+  margin: 0;
+  width: 100%;
+}
+
+@media (max-width: 1024px) {
+  h1 {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+h2 {
+  font-size: var(--text-sm);
+  line-height: var(--line-height-tight);
+  font-weight: 600;
+  max-width: 600px;
+  margin-bottom: 0;
+}
+
+h3 {
+  font-size: var(--text-sm);
+  line-height: var(--line-height-tight);
+  font-weight: 600;
+  max-width: 600px;
+  margin-bottom: 0;
+}
+
+p {
+  font-size: var(--text-sm);
+  line-height: var(--line-height-tight);
+  max-width: 600px;
+  margin-bottom: calc(var(--space-lg) * 1.25);
+}
+
+.project:last-of-type {
+  margin-bottom: var(--space-xl);
+}
+
+@media (max-width: 1024px) {
+    .project:last-of-type {
+        margin-bottom: calc(var(--space-lg) * 3);
+      }
+}
+
+::selection {
+  background-color: var(--color-text);
+  color: var(--color-background);
+}
+
+/* Dividers */
+.section-divider {
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-divider);
+  border: none;
+  margin: var(--space-divider) 0;
+}
+
+@media (max-width: 1024px) {
+  .section-divider {
+    margin: var(--space-divider) 0;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Footer */
+.footer {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-bottom: var(--space-md);
+  padding-top: 40px;
+  background-color: var(--color-background);
+}
+
+.footer-text {
+  gap: var(--space-sm);
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-text p {
+  margin: 0;
+}
+
+.social-links {
+  display: flex;
+  gap: 6px;
+}
+
+.social-links a, .theme-toggle {
+  background-color: var(--color-tag-bg);
+  border: none;
+  border-radius: 6px;
+  font-size: var(--text-sm);
+  color: var(--color-text);
+  cursor: default;
+  text-decoration: none;
+  padding: var(--space-sm) var(--space-sm);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-links a:hover, .theme-toggle:hover {
+  background-color: var(--color-divider);
+}
+
+.social-links a:focus, .theme-toggle:focus {
+    outline: 2px solid var(--color-divider);
+    border: 1px solid var(--color-background);
+    transition: none;
+}
+
+.theme-toggle img {
+  width: 16px;
+  height: 16px;
+  filter: invert(var(--is-dark-mode, 0));
+  transition: filter 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-theme="dark"] .theme-toggle img {
+  --is-dark-mode: 1;
+}
+
+@media (max-width: 1024px) {
+  .footer {
+    padding: none;
+    padding-top: calc(var(--space-lg) * 3);
+  }
+}
+
+/* Text Column */
+.project-text,
+.header-text {
+  max-width: 368px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: var(--space-md);
+  height: -moz-fit-content;
+  height: fit-content;
+  align-self: start;
+}
+
+.header-text {
+  max-width: none
+}
+
+.project-text h2 {
+  margin-bottom: var(--space-sm);
+}
+
+.project-text p {
+  margin-bottom: 0;
+}
+
+/* Links */
+a {
+  color: var(--color-text);
+  text-decoration: none;
+  font-family: var(--font-family-medium);
+  position: relative;
+  transition: color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 1.5px;
+  bottom: -1px;
+  left: 0;
+  background-color: var(--color-text);
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+@media (max-width: 1024px) {
+  /* Stack columns and center content */
+  .project-content {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Disable sticky positioning */
+  .project-text,
+  .header-text {
+    max-width: none;
+    position: relative;
+    top: 0;
+  }
+
+  /* Reset sub-project spacing */
+  .sub-project {
+    margin-top: var(--space-lg);
+  }
+
+  .sub-project .project-text {
+    top: 0;
+  }
+
+  /* Adjust media spacing */
+  .project-media {
+    gap: var(--space-md);
+  }
+}
