@@ -14,9 +14,21 @@ function MediaItem({ item }) {
     )
   }
   
-  // For videos, we'll use the same filename but different extensions
-  const videoSrc = item.src
-  const webmSrc = videoSrc.replace(/\.mp4$/, '.webm')
+  // For videos, ensure we have both .mp4 and .webm sources
+  let videoSrc = item.src;
+  let webmSrc, mp4Src;
+
+  if (videoSrc.endsWith('.mp4')) {
+    mp4Src = videoSrc;
+    webmSrc = videoSrc.replace(/\.mp4$/, '.webm');
+  } else if (videoSrc.endsWith('.webm')) {
+    webmSrc = videoSrc;
+    mp4Src = videoSrc.replace(/\.webm$/, '.mp4');
+  } else {
+    // fallback: use as is
+    mp4Src = videoSrc;
+    webmSrc = videoSrc;
+  }
   
   return (
     <video
@@ -27,7 +39,7 @@ function MediaItem({ item }) {
       // loading="lazy"
     >
       <source src={webmSrc} type="video/webm" />
-      <source src={videoSrc} type="video/mp4" />
+      <source src={mp4Src} type="video/mp4" />
     </video>
   )
 }
