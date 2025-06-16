@@ -29,7 +29,7 @@ function MediaItem({ item }) {
       },
       {
         threshold: 0.1, // Start playing when 10% visible
-        rootMargin: '50px' // Start loading 50px before entering viewport
+        rootMargin: '100px' // Start loading 50px before entering viewport
       }
     )
 
