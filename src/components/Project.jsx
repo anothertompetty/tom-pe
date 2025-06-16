@@ -1,8 +1,49 @@
-import React from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 import './Project.css'
 
 // MediaItem component to handle both images and videos
 function MediaItem({ item }) {
+  const videoRef = useRef(null)
+  const [shouldPlay, setShouldPlay] = useState(false)
+
+  useEffect(() => {
+    if (item.type !== 'video') return
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setShouldPlay(true)
+            // Start playing when visible
+            if (videoRef.current) {
+              videoRef.current.play().catch(console.error)
+            }
+          } else {
+            setShouldPlay(false)
+            // Pause when not visible to save resources
+            if (videoRef.current) {
+              videoRef.current.pause()
+            }
+          }
+        })
+      },
+      {
+        threshold: 0.1, // Start playing when 10% visible
+        rootMargin: '50px' // Start loading 50px before entering viewport
+      }
+    )
+
+    if (videoRef.current) {
+      observer.observe(videoRef.current)
+    }
+
+    return () => {
+      if (videoRef.current) {
+        observer.unobserve(videoRef.current)
+      }
+    }
+  }, [item.type])
+
   if (item.type === 'image') {
     return (
       <img 
@@ -32,11 +73,12 @@ function MediaItem({ item }) {
   
   return (
     <video
-      autoPlay
+      ref={videoRef}
       muted
       loop
       playsInline
-      // loading="lazy"
+      preload="metadata" // Only load metadata initially
+      // Removed autoPlay - we'll control it with intersection observer
     >
       <source src={webmSrc} type="video/webm" />
       <source src={mp4Src} type="video/mp4" />
@@ -87,4 +129,4 @@ export function Project({ project }) {
       ))}
     </div>
   )
-} 
+}
