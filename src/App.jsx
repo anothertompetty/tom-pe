@@ -162,14 +162,12 @@ const projects = [
 ]
 
 function App() {
-  const [theme, setTheme] = React.useState('light')
+  const [theme, setTheme] = React.useState(() => {
+    return localStorage.getItem('theme') || 'light'
+  })
 
   // Update document theme when state changes
   React.useEffect(() => {
-    const savedTheme = localStorage.getItem('theme')
-    if (savedTheme) {
-      setTheme(savedTheme)
-    }
     document.documentElement.setAttribute('data-theme', theme)
     localStorage.setItem('theme', theme)
   }, [theme])
