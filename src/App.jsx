@@ -197,7 +197,7 @@ function App() {
       ))}
       <div className="footer">
         <div className="footer-text">
-          <p>&copy; 2025 Tom Petty &nbsp;&middot;&nbsp; <a href="hello@anothertompetty.com">Email</a> &nbsp;&middot;&nbsp; <a href="https://linkedin.com/in/tompetty" target="_blank" rel="noopener">LinkedIn</a></p>
+          <p>&copy; 2025 Tom Petty &nbsp;&middot;&nbsp; <a href="mailto:hello@anothertompetty.com">Email</a> &nbsp;&middot;&nbsp; <a href="https://linkedin.com/in/tompetty" target="_blank" rel="noopener">LinkedIn</a></p>
         </div>
         <button
           className="theme-toggle"
