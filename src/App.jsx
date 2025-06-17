@@ -1,6 +1,5 @@
 import { Project } from './components/Project'
 import './App.css'
-import { inject } from '@vercel/analytics';
 import React from 'react'
 
 // Import all assets
@@ -212,7 +211,6 @@ function App() {
           )}
         </button>
       </div>
-      inject();
     </div>
   )
 }
