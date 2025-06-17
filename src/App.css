@@ -302,6 +302,11 @@ a:hover::after {
   transform-origin: bottom left;
 }
 
+a:focus {
+  border-bottom: 1.5px solid var(--color-text);
+  outline: none;
+}
+
 @media (max-width: 1024px) {
   /* Stack columns and center content */
   .project-content {
