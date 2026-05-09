@@ -1,46 +1,36 @@
-import React, { useRef, useEffect, useState } from 'react'
+import { useRef, useEffect } from 'react'
 import './Project.css'
 
 // MediaItem component to handle both images and videos
 function MediaItem({ item }) {
   const videoRef = useRef(null)
-  const [shouldPlay, setShouldPlay] = useState(false)
 
   useEffect(() => {
     if (item.type !== 'video') return
+
+    const videoEl = videoRef.current
+    if (!videoEl) return
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            setShouldPlay(true)
-            // Start playing when visible
-            if (videoRef.current) {
-              videoRef.current.play().catch(console.error)
-            }
+            videoEl.play().catch(console.error)
           } else {
-            setShouldPlay(false)
-            // Pause when not visible to save resources
-            if (videoRef.current) {
-              videoRef.current.pause()
-            }
+            videoEl.pause()
           }
         })
       },
       {
-        threshold: 0.1, // Start playing when 10% visible
-        rootMargin: '100px' // Start loading 50px before entering viewport
+        threshold: 0.1,
+        rootMargin: '100px'
       }
     )
 
-    if (videoRef.current) {
-      observer.observe(videoRef.current)
-    }
+    observer.observe(videoEl)
 
     return () => {
-      if (videoRef.current) {
-        observer.unobserve(videoRef.current)
-      }
+      observer.unobserve(videoEl)
     }
   }, [item.type])
 
