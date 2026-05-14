@@ -1,41 +1,14 @@
-import { useRef, useEffect, useState } from 'react'
+import { useRef, useEffect } from 'react'
 import './Project.css'
 
 // MediaItem component to handle both images and videos
 function MediaItem({ item }) {
-  const elementRef = useRef(null)
-  const [shouldLoad, setShouldLoad] = useState(false)
+  const videoRef = useRef(null)
 
-  // Defer loading media until it's near the viewport
-  useEffect(() => {
-    if (shouldLoad) return
-
-    const el = elementRef.current
-    if (!el) return
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries.some((entry) => entry.isIntersecting)) {
-          setShouldLoad(true)
-          observer.disconnect()
-        }
-      },
-      {
-        rootMargin: '600px 0px'
-      }
-    )
-
-    observer.observe(el)
-
-    return () => observer.disconnect()
-  }, [shouldLoad])
-
-  // Play/pause videos based on visibility, once they've been loaded
   useEffect(() => {
     if (item.type !== 'video') return
-    if (!shouldLoad) return
 
-    const videoEl = elementRef.current
+    const videoEl = videoRef.current
     if (!videoEl) return
 
     const observer = new IntersectionObserver(
@@ -59,29 +32,32 @@ function MediaItem({ item }) {
     return () => {
       observer.unobserve(videoEl)
     }
-  }, [item.type, shouldLoad])
+  }, [item.type])
 
   if (item.type === 'image') {
     return (
-      <img
-        ref={elementRef}
-        src={shouldLoad ? item.src : undefined}
-        alt={item.alt}
+      <img 
+        src={item.src} 
+        alt={item.alt} 
         loading="lazy"
         draggable="false"
       />
     )
   }
-
+  
+  // For videos, we only handle MP4 format
+  const videoSrc = item.src;
+  
   return (
     <video
-      ref={elementRef}
+      ref={videoRef}
       muted
       loop
       playsInline
-      preload="metadata"
-      src={shouldLoad ? item.src : undefined}
-    />
+      preload="metadata" // Only load metadata initially
+    >
+      <source src={videoSrc} type="video/mp4" />
+    </video>
   )
 }
 
