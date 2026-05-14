@@ -11,11 +11,39 @@ function MediaItem({ item }) {
     const videoEl = videoRef.current
     if (!videoEl) return
 
+    // iOS Safari requires `muted` to be set as a property (React's JSX prop
+    // doesn't always reflect to the attribute) and needs `playsinline` /
+    // `webkit-playsinline` to be present before play() will succeed inline.
+    videoEl.muted = true
+    videoEl.defaultMuted = true
+    videoEl.setAttribute('muted', '')
+    videoEl.setAttribute('playsinline', '')
+    videoEl.setAttribute('webkit-playsinline', '')
+
+    const tryPlay = () => {
+      const playPromise = videoEl.play()
+      if (playPromise && typeof playPromise.catch === 'function') {
+        playPromise.catch(() => {
+          // Autoplay was blocked (e.g. Low Power Mode on iOS). Retry once
+          // the user interacts with the page.
+          const resume = () => {
+            videoEl.play().catch(() => {})
+            window.removeEventListener('touchstart', resume)
+            window.removeEventListener('click', resume)
+          }
+          window.addEventListener('touchstart', resume, { once: true, passive: true })
+          window.addEventListener('click', resume, { once: true })
+        })
+      }
+    }
+
+    tryPlay()
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            videoEl.play().catch(console.error)
+            tryPlay()
           } else {
             videoEl.pause()
           }
@@ -32,7 +60,7 @@ function MediaItem({ item }) {
     return () => {
       observer.unobserve(videoEl)
     }
-  }, [item.type])
+  }, [item.type, item.src])
 
   if (item.type === 'image') {
     return (
@@ -44,20 +72,19 @@ function MediaItem({ item }) {
       />
     )
   }
-  
-  // For videos, we only handle MP4 format
-  const videoSrc = item.src;
-  
+
   return (
     <video
       ref={videoRef}
+      src={item.src}
       muted
       loop
+      autoPlay
       playsInline
-      preload="metadata" // Only load metadata initially
-    >
-      <source src={videoSrc} type="video/mp4" />
-    </video>
+      preload="auto"
+      disableRemotePlayback
+      aria-label={item.alt}
+    />
   )
 }
 
