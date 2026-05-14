@@ -38,12 +38,28 @@ function MediaItem({ item }) {
     const videoEl = elementRef.current
     if (!videoEl) return
 
+    // iOS Safari doesn't auto-fetch when the video src is set dynamically;
+    // explicitly call load() so the new source actually starts downloading.
+    videoEl.load()
+
+    // Track visibility so we can also retry play() once the video is ready.
+    // On iOS, play() called before the video has buffered enough rejects
+    // silently, which would otherwise leave the video frozen on its first frame.
+    let isInView = false
+    const tryPlay = () => {
+      if (isInView) {
+        videoEl.play().catch(() => {})
+      }
+    }
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            videoEl.play().catch(console.error)
+            isInView = true
+            tryPlay()
           } else {
+            isInView = false
             videoEl.pause()
           }
         })
@@ -55,9 +71,11 @@ function MediaItem({ item }) {
     )
 
     observer.observe(videoEl)
+    videoEl.addEventListener('canplay', tryPlay)
 
     return () => {
       observer.unobserve(videoEl)
+      videoEl.removeEventListener('canplay', tryPlay)
     }
   }, [item.type, shouldLoad])
 
