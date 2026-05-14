@@ -16,6 +16,14 @@ import cordDocs from './assets/images/cord/cord-docs-page.png'
 import cordLogo from './assets/images/cord/cord-logo-neon.png'
 import cordPatents from './assets/videos/cord/patents.mp4'
 import cordTote from './assets/images/cord/cord-tote.png'
+import semaloopWebsiteVideo from './assets/videos/semaloop/semaloop-website-video.mp4'
+import semaloopWebsiteLaptop from './assets/images/semaloop/website-laptop.png'
+import semaloopWebsiteImageryLoop from './assets/videos/semaloop/website-imagery-loop.mp4'
+import semaloopBrandLogo from './assets/images/semaloop/brand-logo.png'
+import semaloopBrandIcon from './assets/images/semaloop/brand-icon.png'
+import semaloopBrandTote from './assets/images/semaloop/brand-tote.png'
+import semaloopBrandCursors from './assets/images/semaloop/brand-cursors.png'
+import semaloopBrandSocialAssets from './assets/videos/semaloop/brand-social-assets.mp4'
 import incidentDashboardHome from './assets/images/incident/incident-dashboard-home.png'
 import incidentDashboardInvestigations from './assets/images/incident/incident-dashboard-investigations.png'
 import incidentOnCallCards from './assets/videos/incident/on-call-cards-animation-2.mp4'
@@ -111,6 +119,59 @@ const projects = [
             type: 'image',
             src: incidentSev0Bg,
             alt: 'Sev0 conference stage design'
+          }
+        ]
+      }
+    ]
+  },
+  {
+    title: "Semaloop website and brand",
+    description: "Semaloop approached me to design their first website, and as part of that, a minimum viable brand. As a pre-seed startup, a strong brand will help them attract customers and top talent, without being a huge investment. .",
+    media: [
+      {
+        type: 'video',
+        src: semaloopWebsiteVideo,
+        alt: 'Semaloop website video'
+      },
+      {
+        type: 'image',
+        src: semaloopWebsiteLaptop,
+        alt: 'Semaloop website on a laptop'
+      },
+      {
+        type: 'video',
+        src: semaloopWebsiteImageryLoop,
+        alt: 'Semaloop website imagery loop'
+      }
+    ],
+    subProjects: [
+      {
+        description: "'Tom was a great partner for us at our early stage. He understood the need to move fast without overcomplicating things, and brought the right mix of taste, clarity, and strong opinions on salads. He helped us make good decisions quickly, and shipped a brand and website that we're proud of.' — Charlie Kingston, Founder of Semaloop",
+        media: [
+          {
+            type: 'image',
+            src: semaloopBrandLogo,
+            alt: 'Semaloop brand logo'
+          },
+          {
+            type: 'image',
+            src: semaloopBrandIcon,
+            alt: 'Semaloop brand icon'
+          },
+          {
+            type: 'image',
+            src: semaloopBrandTote,
+            alt: 'Semaloop branded tote'
+          },
+          {
+            type: 'image',
+            src: semaloopBrandCursors,
+            alt: 'Semaloop brand cursors'
+          },
+          {
+            type: 'video',
+            src: semaloopBrandSocialAssets,
+            alt: 'Semaloop social assets'
           }
         ]
       }
