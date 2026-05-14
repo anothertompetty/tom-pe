@@ -38,6 +38,7 @@
 
 .media-item {
   width: 100%;
+  min-height: 240px;
   border-radius: 6px;
   overflow: hidden;
 }
@@ -48,6 +49,13 @@
   height: auto;
   display: block;
   object-fit: cover;
+}
+
+/* Once the media has loaded, drop the placeholder min-height so the
+   wrapper hugs the natural media size (avoids letterboxing short items). */
+.media-item:has(img[src]),
+.media-item:has(video[src]) {
+  min-height: 0;
 }
 
 /* Sub-projects */
