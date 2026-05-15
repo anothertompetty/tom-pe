@@ -88,6 +88,21 @@ function MediaItem({ item }) {
   )
 }
 
+// Pull-quote / testimonial block
+function ProjectQuote({ quote }) {
+  return (
+    <blockquote className="project-quote">
+      <p>{quote.text}</p>
+      <cite>
+        <span className="quote-name">{quote.attribution.name}</span>
+        {quote.attribution.role && (
+          <span className="quote-role">{quote.attribution.role}</span>
+        )}
+      </cite>
+    </blockquote>
+  )
+}
+
 // ProjectContent component for shared layout between main and sub-projects
 function ProjectContent({ text, media }) {
   return (
@@ -114,7 +129,8 @@ export function Project({ project }) {
         text={
           <>
             <h2>{project.title}</h2>
-            <p>{project.description}</p>
+            {project.description && <p>{project.description}</p>}
+            {project.quote && <ProjectQuote quote={project.quote} />}
           </>
         }
         media={project.media}
@@ -124,7 +140,12 @@ export function Project({ project }) {
       {project.subProjects?.map((subProject, index) => (
         <div key={index} className="sub-project">
           <ProjectContent 
-            text={<p>{subProject.description}</p>}
+            text={
+              <>
+                {subProject.description && <p>{subProject.description}</p>}
+                {subProject.quote && <ProjectQuote quote={subProject.quote} />}
+              </>
+            }
             media={subProject.media}
           />
         </div>

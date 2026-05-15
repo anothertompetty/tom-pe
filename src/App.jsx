@@ -146,7 +146,13 @@ const projects = [
     ],
     subProjects: [
       {
-        description: "'Tom was a great partner for us at our early stage. He understood the need to move fast without overcomplicating things, and brought the right mix of taste, clarity, and strong opinions on salads. He helped us make good decisions quickly, and shipped a brand and website that we're proud of.' — Charlie Kingston, Founder of Semaloop",
+        quote: {
+          text: "Tom was a great partner for us at our early stage. He understood the need to move fast without overcomplicating things, and brought the right mix of taste, clarity, and strong opinions on salads. He helped us make good decisions quickly, and shipped a brand and website that we're proud of.",
+          attribution: {
+            name: "Charlie Kingston",
+            role: "Founder & CEO"
+          }
+        },
         media: [
           {
             type: 'image',
